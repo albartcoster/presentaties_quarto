@@ -1,0 +1,55 @@
+---
+title: "Grundfutter L.A."
+author: "Albart Coster"
+date: "1-8-2025"
+format: revealjs
+editor: visual
+lang: de
+output-dir: docs
+---
+
+## Ziel
+
+-   Ernährung Kühe
+-   Leistung
+-   Gesundheit Kuhe
+-   Kosten
+-   ...
+
+## Grundfutter beeinflusst die Leistung:
+
+```{r}
+load("beelden/timeseries_la")
+ts
+```
+
+## Grundfutter '24
+
+-   Gute Erträge Mais
+-   Grass schlecht
+-   Luzerne Herausforderung
+
+## Ziele Grundfutter
+
+-   Erträge Acker
+-   Erfolgreiche Ernte
+-   Erfolgreiche Einsilierung
+-   Erfolgreich aussilieren
+
+## Ernte Grass, Luzerne
+
+## Einsilieren Grass, Luzerne
+
+## Ernte Mais
+
+## Einsilieren Mais
+
+## Aussilieren
+
+## Futterung
+
+-   Speziell Körner
+
+## Eure gedanken
+
+## Danke und bis nächste Mal
