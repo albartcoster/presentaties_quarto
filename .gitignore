@@ -1,5 +1,7 @@
 /.quarto/
 
+.env
+/data_202501014
 ### R ###
 # History files
 .Rhistory
