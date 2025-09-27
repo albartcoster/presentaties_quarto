@@ -4,7 +4,7 @@ project:
 
 website:
   title: "Presentaties"
-  site-url: "https://albartcoster.github.io/presentaties_quarto/index.html"
+  site-url: "https://albartcoster.github.io/presentaties_quarto"
   
 format:
   html:
