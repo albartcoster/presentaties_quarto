@@ -5,9 +5,13 @@ project:
 website:
   title: "Presentaties"
   site-url: "https://albartcoster.github.io/presentaties_quarto"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - dakvjenneruiters.qmd
   
 format:
-  html:
-    theme: default
+  html
 
   

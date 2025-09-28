@@ -2,34 +2,50 @@
 title: "Nieuw dak op Manage Vjenneruiters"
 format:
   revealjs: 
-    theme: [default]
+    theme: 
+     - moon
 editor: visual
 lang: nl
 output-dir: docs
 ---
+
+## Situatie
+
+::: {.callout-note appearance="simple"  icon=false}
 
 ## Aanleiding
 
 -   Door hagelbui zijn lichtplaten dak lek
 -   Door ouderdom is dak niet meer toegankelijk
 -   Deel van dak is asbest, moet daarom gesaneerd worden
+:::
 
+
+::: {.callout-warning appearance="simple"  icon=false}
 ## Overwegingen
 
 -   Dak moet vernieuwd worden
 -   Kost veel geld
 -   Voorstel: combinatie van lening bij bank en geld ophalen bij leden
+:::
 
+## Opties
+
+::: {.callout-tip appearance="simple"  icon=false}
 ## Bank
-
 -   Lening voor 25 jaar, ca 5-7% rente
 -   Is zware last voor vereniging
 -   Vraag is òf en hoeveel bank financiert
+:::
 
-## Leden
+::: {.callout-important appearance="simple"  icon=false}
+## Leden en anderen
 
 3 opties
 
 -   Lening
 -   Obligatie
--   Schenking
+-   Schenking 
+
+:::
+
