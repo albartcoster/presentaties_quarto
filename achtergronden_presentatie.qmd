@@ -1,0 +1,29 @@
+---
+title: "Presentatie achtergrond"
+format: html
+bibliography: bib_albart.json
+---
+
+## Groei kalveren
+
+Kort gezegd. Groei en ontwikkeling kalveren bepaalt latere productie. Zie @gelsinger2016 bijvoorbeeld. Echter, ook aanwijzing dat groei en productie een kwadratisch verband hebben, @zantonheindrichs2005, waarbij optimale groei in puberteit rond de 800 gram/dag ligt (bij hogere groei meer vervetting).
+
+An observational study of 795 Holstein calves through 16 wk of age indicated that increasing DMI at weaning and reducing the number of sick days could also increase first-lactation milk production (Heinrichs and Heinrichs, 2011). =@gelsinger2016. en ook Moallem, die laten duidelijk zien dat groei in jonge leven productie later bepaalt.
+
+The meta-analysis conducted in 2013 (Soberon and Van Amburgh, 2013) compiled results from several data sets and reported a 42.9-kg increase in first-lactation milk production with every 100 g/d increase in nutrient intake from liquid feed or a 155-kg increase for every 100 g/d increase in preweaning growth rate. @gelsinger2016
+
+removing genetic variation in milk using parent average values as a covariate resulted in a tendency for greater milk from heifers fed the intensive diet. @rincker2011
+
+Incidence of diarrhea or navel infection was not associated with the chances of finishing the first lactation. Heifers that completed first lactation had a lesser average age at first calving (724 ± 2 d) than those that did not (737 ± 3 d). Heifers that reached second lactation grew (0.8 ± 0.04 kg/d) more between 12 and 65 d of age than those that did not (0.7 ± 0.04 kg/d). @bach2011a
+
+The positive long-term effects of feeding WM on first-lactation milk production were independent of their effects on skeletal growth. Enhanced milk production observed with WM treatment may be related to the milk supply, paracrine or endocrine effects of fat tissues on mammary parenchyma, or a combination of both factors. @moallem2010
+
+Milk yield responses were associated quadratically with increasing prepubertal ADG; first-lactation production increased as prepubertal gains increased up to 799 g/d, the point of maximal milk production, whereas further increases in prepubertal ADG were associated with lower milk production.@zanton2005
+
+These results support our thesis that compensatory growth induced during an allometric growth phase improves mammary development and energy and protein metabolic status of dairy heifers.@Ford2001
+
+vailable evidence concerning the relationship between growth rate, mammary growth and milk yield in heifers leads to these conclusions: 1) Increased growth rate due to high feeding level before puberty onset can lead to reduced pubertal mammary growth and reduced milk yield potential. 2) Increased growth rate due to high feeding level after puberty and during pregnancy have no effect on mammary growth and milk yield. 3) Higher body weight gain due to higher genetic potential for growth is positively related to milk yield. The negative effect of high feeding level before puberty occurs in all breeds, but the level of feeding causing reduced yield varies. IGF1
+
+Nog iets van Geert opsomer; groei en ontwikkeling. IGF1 e.d. 
+
+IGF1 insulineresistentie e.d.

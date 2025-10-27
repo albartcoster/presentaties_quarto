@@ -1,58 +1,746 @@
 ---
 title: "Presentatie bedrijfsopvolgers"
 author: "Albart Coster"
-date: "10-14-2025"
-format: 
- revealjs:
+date: "11-3-2025"
+engine: knitr
+format:
+  revealjs:
     scrollable: true
 editor: visual
 lang: nl
 output-dir: docs
+bibliography: bib_albart.json
+css: styles.css
 ---
 
 ## Voorstellen
 
 ## Inhoud
 
-3 Onderwerpen:
+3 Onderwerpen, allemaal gericht op productie en voerwinst
 
--   Productie
--   Winst
+-   Jongveeopfok
+-   Melkproductie
 -   Milieudoelen
+
+## Jongveeopfok
+
+Doel van opfokperiode zijn goede melkkoeien.
+
+-   Wat is goed
+-   Hoe lang mag het duren
+-   ...
+
+Daarmee, doelen:
+
+-   Gewicht bij afkalven: 85% van volwassengewicht
+-   Leeftijd bij afkalven: 23 maanden
+
+Dan volgt daaruit:
+
+-   Geboortegewicht: 45 kg
+-   Volwassengewicht: 750 kg
+-   Groei: `{r} round(((750 *.85)-45)/(23*30.5),3)` kg/dag.
+
+## Belang van goede groei
+
+Algemene gedachte: hogere groei tijdens opfok positief voor latere productie:
+
+|                               | Melkpoeder | Magere Melkpoeder |
+|-------------------------------|------------|-------------------|
+| **Gewicht (kg)**              |            |                   |
+| 150 d                         | 144        | 147               |
+| 300d                          | 248.6      | 256               |
+| 450d                          | 355        | 369               |
+| 600d                          | 464        | 485               |
+| Leeftijd eerste AI (d)        | 452        | 426               |
+| Leeftijd dracht (d)           | 476        | 446               |
+| Leeftijd afkalven (d)         | 750        | 705               |
+| **Productie eerste laktatie** |            |                   |
+| Melk (kg/dag)                 | 30.4       | 30.7              |
+| Vet (%)                       | 3.56       | 3.61              |
+| Eiwit (%)                     | 3.06       | 3.14              |
+
+::: rf
+Bron: @Moallem2010
+:::
+
+## Verband is echter lastiger:
+
+![Groei en productie uit verschillende studies](beelden/gelsinger2016_fig2.png)
+
+::: rf
+Bron: @Gelsinger2016
+:::
+
+## Gezondheid van kalveren doet er toe
+
+![Abortus en overleving 1e laktatie](beelden/bach2011_fig1.png){width="635"}
+
+![Longontsteking en overleving 1e laktatie](beelden/bach2011_fig2.png){width="635"}
+
+![Dracht en overleving 1e laktatie](beelden/bach2011_fig4.png){width="635"}
+
+::: rf
+Bron: @bach2011a
+:::
+
+## Opmerkingen
+
+Er moet een match zijn tussen groeiomstandigheden moeder en kalf:
+
+![Afstemming moeder-kalf](beelden/vaneetvelde2017_fig1.png){width="635"}
+
+::: rf
+Bron: @vaneetvelde2017
+:::
+
+## Afstemming moeder-kalf
+
+- Hoge productie, of andere suboptimale omstandigheden zorgen voor lage IGF-1 en insulinespiegels in moeder
+- Dit compromitteert groei kalf in baarmoeder
+- Kalf compenseert dit na geboorte door hogere gevoeligheid voor insuline, hardere groei
+- Dit leidt tot vettere vaarzen, en later tot lagere insulinegevoeligheid, ketose, in koeien
+
+## Trapmodel
+
+We hebben gezien dat maximale groei niet altijd goed is. Een interessant idee is het trapmodel:
+
+![Trapmodel](beelden/ford2001_fig1.png)
+
+## Trapmodel
+
+|                       | Controle | Trapmodel |
+|-----------------------|----------|-----------|
+| Groei (g/dag)         | 0.78     | 0.89      |
+| DS opname (kg/dag)    | 11.4     | 9.4       |
+| Groei efficientie (%) | 7        | 9.4       |
+| **Productie lakt 1**  |          |           |
+| Melk (kg/dag)         | 24.7     | 30.1      |
+| Vet (%)               | 3.16     | 3.07      |
+| Eiwit (%)             | 2.98     | 3.08      |
+| **Productie lakt 2**  |          |           |
+| Melk (kg/dag)         | 25.7     | 29.6      |
+| Vet (%)               | 3.77     | 3.65      |
+| Eiwit (%)             | 3.12     | 3.08      |
+
+::: rf
+Bron: @ford2001a
+:::
+
+## Trapmodel en weidegang?
+
+- Is dit wellicht één van de voordelen van weidegang bij jongvee?
+- Daarnaast, beweging zorgt ook voor betere botontwikkeling bij jongvee:
+
+| Sprints/week Moment | Weerstand buigen (x$10^7\texttt{N mm}^2$) | Breekkracht (N) |
+|------------------------|------------------------|------------------------|
+| 0 sprint | 9.66 | 2.3 |
+| 1 sprints | 10.4 | 2.6 |
+| 3 sprints | 10.8 | 2.4 |
+| 5 sprints | 10.2 | 3 |
+
+::: rf
+Bron: @logan2019
+:::
+
+## Opfok: monitoren
+
+App opfok:
+
+-   Geboortegewicht
+-   Volwassengewicht
+-   Leeftijd bij afkalven
+-   Gewicht bij afkalven
+-   Individuele kalveren
+-   Groei over tijd van groepen
+-   Groei in grafiek met doelen
 
 ## Productie
 
-Productie belangrijk voor (voer)winst. Voerwinst (IOFC) is melkprijs \* melkproductie - totale voerkosten
+## Achtergrond. Energievoorziening
 
-(resultaten uit voerkosten)
+We kennen VEM. VEM is een maat voor Netto Energie:
 
-Wat hebben we nodig voor hoge productie:
+![Schema opdeling energie](beelden/schema_energie.png){width=50%}
+## 2. Achtergrond. Verbrandingsenergie
 
--   Goede opstart, daardoor hoge piekproductie
--   Gezonde koeien (uiergezondheid, wellicht klauwgezondheid)
--   Koe beschikt over veel glucose (vrij technisch)
--   Resultaten Alex BAch
+![Bomb-calorimeter](beelden/bomb-calorimeter.png){width=50%}
 
-## Winst
+We kunnen het ook berekenen:
 
-Omzet is niet direct winst. Daarom IOFC.
 
--   Wat helpt voor lage voerkosten: weinig toevoegingen
--   Veel en goed ruwvoer
--   Weinig verlies in de kuil en restvoer niet verloren (conserveirng kuil, uitkuilen, ..)
--   Efficiëntie koeien (lage DIL, voerefficiëntie)
--   Efficiëntie omzetting (geen stress, hoge opname, weingi verliezen ook bij koeien)
--   Lage kosten in andere sectoren (jongveeopfok, droogstand)
+```{r}
+#| label: tab-brutoenergie
+#| echo: false
+#| results:'asis'
+#| warning: false
 
-## Milieudoelen
+tab0 <- data.frame(Nutrient = c("Zetmeel",
+                                "Vet",
+                                "NDF",
+                                "RE",
+                                "ROM"),
+                   VE = c(17.7,
+                          39.33,
+                          17.6,
+                          23.63,
+                          16.73)) |> 
+  gt(rowname_col = "Nutrient") |> 
+  cols_label(VE = "VE waarde(MJ/kg)") |> 
+  tab_footnote("ROM = rest van suikers, vetzuren, glycerol, oplosbare vezel") |> 
+  tab_footnote("@nrc2021")
 
--   Ruwvoer telen met weinig N
--   Veel ruwvoer van land halen
--   Weidegang
--   Benutting najaarsgras
--   Kuilen met veel DVE, weinig OEB
+tab0
+```
 
-## App
+- Internationale eenheid voor energie is Joule. 1000 VEM = 6.9 MJoule.
+
+
+## 2. Achtergrond. Verteerbare energie
+
+Moet experimenteel vaststeld worden:
+
+![Fistuleerde koe](beelden/fistuleerde_koe.jpg){width=50%}
+
+Belangrijke concepten:
+
+- Verteerbaarheid wordt beïnvloed door behandeling van grondstof:
+
+```{r}
+#| label: "tab-zetmeelvertering"
+#| echo: false
+#| results: 'asis'
+tab1 <- data.frame(Behandeling = c("Standaard gemalen",
+                                   'Fijn gemalen $$(< 1.25\\mu m)$$',
+                                   'Matig gemalen $$(1.5 - 3.25 \\mu m)$$',
+                                   'CCM zeer fijn gemalen $$($<2 \\mu)$$',
+                                   "Maisvlokken"),
+                   Verteerbaarheid = c(92,
+                                       92,
+                                       89,
+                                       96,
+                                       94)) |> 
+  mutate(Verteerbaarheid = paste(Verteerbaarheid,"%")) |> 
+  gt(rowname_col = "Behandeling") |> 
+  tab_footnote("@nrc2021")
+tab1
+```
+
+- Verteerbaarheid wordt bepaald door opname. Bij hogere opname lagere verteerbaarheid.
+- Grondstoffen beïnvloeden elkaars verteerbaarheid (zetmeel verlaagt NDF verteerbaarheid, vetten beïnvloeden elkaars verteerbaarheid en NDF verteerbaarheid)
+
+## 2. Achtergrond. Energiebehoefte
+
+```{r}
+#| label: "tab-energiebehoefte"
+#| echo: false
+#| results: 'asis'
+
+
+tab <- data.frame(c(Groei = "23.4 MJ/kg LW",
+         Onderhoud = "$$1.51 + 0.405\\cdot\\textrm{vet}\\%$$",
+         Melkproductie = "$$1.51 + 0.405\\cdot\\textrm{vet}\\%$$",
+         Kalf = "vanaf 200 dagen dracht belangrijk",
+         Activiteit = "$$1.46\\textrm{MJ}/(\\textrm{kg LW}\\cdot\\textrm{km})$$"))
+colnames(tab) <- "Energie"
+tab$doel <- rownames(tab)
+
+gt(tab,rowname_col = "doel") |> 
+  tab_header("Energiebehoefte per doel") |> 
+  tab_stubhead("Doel")
+
+```
+
+## 2. Achtergrond. Eiwit
+
+![Schema eiwit rund](beelden/protein_metabolism_cow.png)
+
+## 2. Achtergrond. DVE
+
+Opbouw DVE:
+
+$\textrm{DVE} = \textrm{DVBE} + \textrm{DVME} - \textrm{DVFE}$
+
+$\textrm{DVME} = 0.75\cdot0.85\cdot\textrm{MREE}$
+
+$\textrm{MREE} = 0.15\cdot{FOS}$
+
+## 2. Achtergrond. Behoefte aan DVE en VEM
+
+```{r}
+#| label: "tab-behoefte VEM DVE"
+#| echo: false
+#| results: 'asis'
+
+tab12 <- read.xlsx("beelden/20251103_tabellen.xlsx",
+                   sheet = "tab12cvb",
+                   colNames = FALSE)
+
+
+tab12 |> gt(id="two",rowname_col = "X1") |> 
+  tab_stubhead(label = "Productie") |> 
+  tab_header(title = "VEM en DVE behoeftes voor oplopende melkproductie") |> 
+  tab_spanner(label = "3.5% vet, 3.03% eiwit",columns  = c(X2,X3)) |> 
+  tab_spanner(label = "3.75% vet, 3.18% eiwit",columns  = c(X4,X5)) |> 
+  tab_spanner(label = "4.00% vet, 3.32% eiwit",columns  = c(X6,X7)) |> 
+  tab_spanner(label = "4.25% vet, 3.45% eiwit",columns  = c(X8,X9)) |> 
+  cols_label(X2 = "VEM",
+             X3 = "DVE",
+             X4 = "VEM",
+             X5 = "DVE",
+             X6 = "VEM",
+             X7 = "DVE",
+             X8 = "VEM",
+             X9 = "DVE") |> 
+  opt_css(
+    css = "
+    .cell-output-display {
+      overflow-x: unset !important;
+    }
+    div#two {
+      overflow-x: unset !important;
+      overflow-y: unset !important;
+    }
+    #two .gt_col_heading {
+      position: sticky !important;
+      top: 0 !important;
+    }
+    ")
+```
+
+::: rf
+Bron: @cvbboekje
+:::
+
+
+## Toepassingen
+
+1. Eiwit naar behoefte voeren
+2. Zorgen voor goede kuilen
+3. Verloop productie over jaar
+4. Voeren van vetten
+
+## Toepassing 1. Eiwit naar behoefte voeren
+
+Voer dieren naar behoefte:
+
+![](beelden/protein_metabolism_cow.png)
+
+We spreken over *Darm Verteerbaar Eiwit*, **DVE**
+
+- Onderhoud: $\DVE{}_{(g/dag)} = (2,75 \cdot \mathrm{lg}^{0,5} + 0,2 \cdot \mathrm{lg}\cdot{0,6})/0,67$
+
+```{r}
+DVE_onderhoud = (2.75*750^0.5 + 0.2*750^0.6)/0.67
+DVE_onderhoud
+```
+- Productie: $\DVE{}_{(g/dag)} = \mpr{}\cdot \E{}\cdot1,396 + (\mpr{}\cdot \E{})^2\cdot 0,000195$
+```{r,echo = TRUE}
+DVE_productie_50kg = 50 * 33*1.396 + (50*33)^2*0.000195
+DVE_productie_50kg
+DVE_productie_50kg + DVE_onderhoud
+##
+DVE_productie_25kg = 25 * 36*1.396 + (25*36)^2*0.000195
+DVE_productie_25kg
+DVE_productie_25kg + DVE_onderhoud
+```
+
+::: rf
+Bron: @cvbboekje
+:::
+
+##  Toepassing 1. Eiwit naar behoefte voeren, nog meer bewijs
+
+```{r}
+#| label: "grafiek-ureum"
+
+grafiek_ureum()
+```
+
+##  Toepassing 1. Eiwit naar behoefte voeren. Experimenteel bewijs
+
+![](beelden/larsen2014.png)
+
+::: rf
+Bron: @Larsen2014
+:::
+
+
+## Eiwitbenutting Ruwvoerwinning
+
+Belangrijkste punt: verbeter kuilgras
+
+![](beelden/rumen_acidosis.jpg){width=30%}
+
+::: rf
+Bron: @aschenbach2019
+:::
+
+
+```{r,echo=FALSE,results='asis'}
+t1 <- data.frame(Kenmerk = c("LPS",
+                             "Methylalanine",
+                             "Putrescine",
+                             "Cadaverine",
+                             "Histamine"),
+                 basis= c(14692,37.3,14,15.9,2.03),
+                 Sara1 = c(131209,37.3,32.2,24.2,13),
+                 Sara2 = c(168285,46,30.7,24.3,5.19))
+gt(t1)
+```
+
+
+::: rf 
+Bron: @humer2018
+:::
+
+![](beelden/proteolysis_lallemand.png)
+
+![](beelden/figuren_pieper_2009.png)
+
+::: rf
+Bron: @pieper2009
+:::
+
+
+## Ruwvoerwinning. Snel drogen
+
+```{r}
+#| label: "tab-cavallarin"
+#| echo false
+#| results: 'asis'
+
+
+tabc <- read.xlsx("beelden/20251103_tabellen.xlsx",
+                   sheet = "tab1cavallarin2005",
+                   colNames = FALSE)
+
+rc <- function(x){
+  round(as.numeric(str_trim(gsub("[a-z]","",x))),2)
+}
+
+tabc |> 
+  mutate(across(colnames(tabc)[-1],rc)) |> 
+  gt(id="three",rowname_col = "X1") |> 
+  tab_stubhead(label = "Kenmerk") |> 
+  tab_header(title = "Invloed kneuzen en drogen op kwaliteit Sainfoin.") |> 
+  tab_spanner(label = "Ongekneusd",columns  = c(X3,X5)) |> 
+  tab_spanner(label = "Gekneusd",columns  = c(X6,X8)) |> 
+  cols_label(X2 = "0",
+             X3 = "25",
+             X4 = "71",
+             X5 = "77",
+             X6 = "5",
+             X7 = "25",
+             X8 = "29") |> 
+  opt_css(
+    css = "
+    .cell-output-display {
+      overflow-x: unset !important;
+    }
+    div#two {
+      overflow-x: unset !important;
+      overflow-y: unset !important;
+    }
+    #two .gt_col_heading {
+      position: sticky !important;
+      top: 0 !important;
+    }
+    ")
+```
+
+::: rf
+Bron: @Cavallarin2005
+:::
+
+- Snelheid van drogen bepaalt kwaliteitsverliezen
+- Snelheid belangrijker dan uiteindelijke DS-percentage
+
+Snelheid van drogen wordt beïnvloed door:
+
+Kneuzen en schudden
+
+```{r}
+#| label: "tab-borreani" 
+#| echo: false
+#| results: 'asis'
+#| 
+tabsb <- read.xlsx("beelden/20251103_tabellen.xlsx",
+                   sheet = "tabsborreani1999",
+                   colNames = TRUE)
+
+tabsb |> 
+  select(-Trial) |> 
+  gt(id="four",rowname_col = "Systeem") |> 
+  tab_stubhead(label = "Kenmerk") |> 
+  tab_header(title = "Invloed van kneuzen en schudden op droogsnelheid.") |> 
+  tab_spanner(label = "Droogsnelheid",columns  = c(S1,S2)) |> 
+  tab_spanner(label = "% van controle",columns  = c(perc1,perc2)) |> 
+  cols_label(S1 = "Ongeschud",
+             S2 = "Geschud",
+             perc1 = "Ongeschud",
+             perc2 = "Geschud") |> 
+  tab_footnote("letters geven significante verschillen aan.")|> 
+  tab_row_group(label = "Gras",rows= 1:12)|> 
+  tab_row_group(label ="Luzerne",rows= 13:24) |> 
+  opt_css(
+    css = "
+    .cell-output-display {
+      overflow-x: unset !important;
+    }
+    div#two {
+      overflow-x: unset !important;
+      overflow-y: unset !important;
+    }
+    #two .gt_col_heading {
+      position: sticky !important;
+      top: 0 !important;
+    }
+    ")
+```
+
+::: rf
+Bron: @Borreani1999
+:::
+
+
+Moment van schudden maakt echter ook uit:
+
+![](beelden/figuur_4_savoie2002.png)
+
+::: rf 
+Bron: @Savoie2002
+:::
+
+En droogte van ondergrond ook 
+
+## Ruwvoerwinning. Intermezzo: tijd van drogen en vitamine D
+
+Vitamine D gehalte in gras neemt toe tijdens de veldperiode:
+
+```{r}
+#| labe: "tab-vitD"
+#| echo: false
+#| results: asis
+
+
+tabnl <- read.xlsx("beelden/20251103_tabellen.xlsx",
+                   sheet = "tab2newlander1952",
+                   colNames = TRUE)
+
+tabnl |> 
+    select(-c(No,Gewas)) |> 
+  gt(id="five",rowname_col = "Systeem") |> 
+  tab_row_group("Spaanse Dravik en Luzerne, gemaaid 28/6/1950 7:00",
+                rows = 1:4) |> 
+  tab_row_group("2e S. Luzerne, gemaaid 15/8-1950 7:00",
+                rows = 5:7) |> 
+  tab_row_group("Spaanse Dravik, gemaaid 21-6-1951 13:30",
+                rows = 8:10) |> 
+  tab_row_group("Luzerne, gemaaid 21-6-1951 13:30",
+                rows = 11:13) |> 
+  tab_row_group("Spaanse Dravik, gemaaid 11-7-1951 11:00",
+                rows = 8:10) |> 
+  tab_header(title = "Invloed van tijd en weer op Vit D3 gehalte in grassen.") 
+```
+
+::: rf
+Bron: @Newlander1952
+:::
+
+
+## Ruwvoerwinning. Snel conserveren
+
+Verliezen gaan na het inkuilen door tot pH stabiel (laag) is. pH van kuil daalt als er melkzuur wordt gevormd. Dat wordt pas gevormd als zuurstof in kuil op is. 
+
+![](beelden/figuur_1_davies_1998.png)
+![](beelden/figuur_3_davies_1998.png)
+
+```{r,echo=FALSE,results='asis'}
+tabd <- read.xlsx("beelden/20250402_tabellen.xlsx",
+                   sheet = "tab2davies1998",
+                   colNames = TRUE)
+
+tabd |> 
+  gt(id="six",rowname_col = "Waarde") |> 
+  tab_footnote("letters geven significante verschillen aan")
+```
+
+::: rf
+Bron: @Davies1998
+:::
+
+
+# Ruwvoerwinning: hakselen en aanrijden
+
+```{r,echo=FALSE,results='asis'}
+tabp <- read.xlsx("beelden/20251103_tabellen.xlsx",
+                   sheet = "tab3pauly1999",
+                   colNames = TRUE)
+
+tabp |>
+  select(-Forage.treatment) |> 
+  gt(id="seven",rowname_col = "Density") |> 
+    tab_header("Invloed van techniek en aanrijden op silagekwaliteit.") |> 
+  tab_row_group("FW 26 cm",rows = 1:2) |> 
+  tab_row_group("FW 4 cm",rows = 3:4) |> 
+  tab_row_group("PC 4 cm",rows = 5:6) 
+```
+
+<div class="rf">Bron: @Pauly1999</div>
+
+# Ruwvoerwinning: afdekken
+
+![](beelden/figuur_1_lima_2017.png)
+
+```{r,echo=FALSE,results='asis'}
+tabl1 <- read.xlsx("beelden/20250402_tabellen.xlsx",
+                   sheet = "tab1lima2017",
+                   colNames = TRUE)
+
+tabl1 |>
+  gt(id="eight",rowname_col = "Item") |> 
+    tab_header("Eigenschappen van folie in onderzoek.")
+
+
+tabl3 <- read.xlsx("beelden/20250402_tabellen.xlsx",
+                   sheet = "tab3lima2017",
+                   colNames = TRUE) 
+
+tabl3 |> gt(id = "nine",rowname_col = 'item') |> 
+  tab_header("Microbiële en fermentatieeigenschappen van kuilen.")
+
+tabl4 <- read.xlsx("beelden/20250402_tabellen.xlsx",
+                   sheet = "tab4lima2017",
+                   colNames = TRUE)
+
+tabl4 |> gt(id = "ten",rowname_col = 'item') |> 
+  tab_header("Voederwaarde op verschillende plekken in kuilen.") 
+```
+
+<div class="rf">Bron: @Lima2017</div>
+
+# Ruwvoerwinning: inkuilmiddel
+
+![](beelden/figuur_1_davies_1998.png)
+![](beelden/figuur_3_davies_1998.png)
+<div class="rf">Bron: @Davies1998</div>
+
+```{r,echo=FALSE,results='asis'}
+tablk <- read.xlsx("beelden/20251103_tabellen.xlsx",
+                   sheet = "tab2kristensen2010",
+                   colNames = FALSE)
+
+tablk |>
+  mutate(across(colnames(tablk)[-1],rc)) |> 
+  gt(id="eleven",rowname_col = "X1") |> 
+  tab_header("Eigenschappen van kuilen ingekuild met drie verschillende inkuilmiddelen over de tijd.") |> 
+  tab_spanner(label = "January",columns  = c(X2,X4)) |> 
+  tab_spanner(label = "April",columns  = c(X5,X7)) |> 
+  tab_spanner(label = "August",columns  = c(X8,X10)) |>
+  sub_missing(columns = everything(),missing_text = "") |> 
+  cols_label(X2 = "Control",
+             X3 = "Lactsil",
+             X4 = "Lactisil Fresh",
+             X5 = "Control",
+             X6 = "Lactsil",
+             X7 = "Lactisil Fresh",
+             X8 = "Control",
+             X9 = "Lactsil",
+             X10 = "Lactisil Fresh") |> 
+  opt_css(
+    css = "
+    .cell-output-display {
+      overflow-x: unset !important;
+    }
+    div#eleven {
+      overflow-x: unset !important;
+      overflow-y: unset !important;
+    }
+    #eleven .gt_col_heading {
+      position: sticky !important;
+      top: 0 !important;
+    }
+    ")
+```
+
+<div class="rf">Bron: @Kristensen2010</div>
+
+- Voor behoud van eiwitkwaliteit: homofermentative middelen
+- Voor aerobe stabiliteit: mengsel van homo- en heterofermentatieve middelen
+
+# Ruwvoerwinning: Inkuilen onder (zeer) moeilijke omstandigheden
+
+```{r,echo=FALSE,results='asis'}
+tabpiep <- read.xlsx("beelden/20251103_tabellen.xlsx",
+                   sheet = "table1pieper2009",
+                   colNames =TRUE)
+
+tabpiep |>
+  select(-2) |> 
+  mutate(across(colnames(tabpiep)[-(1:2)],rc)) |> 
+  gt(id="twelve",rowname_col = "X1") |> 
+  tab_header("Eigenschappen van uitgangsmateriaal.")
+```
+
+![](beelden/figuren_pieper_2009.png)
+
+<div class="rf">Bron: @pieper2009</div>
+
+hier filmpjes van gras +  maismengsel
+-- ![Mengsel gras+mais](beelden/natgras_oane.mp4)
+-- ![Mengsel gras+mais](beelden/natgras_oane2.mp4) 
+-- ![Mengsel gras+mais](beelden/natgras_oane3.mp4) 
+-- ![Mengsel gras+mais](beelden/mengsel_grasmais.jpg) 
+
+![Uitslag](beelden/grasmaisbeeld.jpg)
+
+
+![Uitslag](beelden/gras_mais_friesian_uitslag.png)
+
+# Ruwvoerwinning: Intermezzo: eiwitafbraak en rode klaver
+
+Rode klaver bevat een enzym dat proteolyse remt:
+
+```{r,echo=FALSE,results='asis'}
+tabli <- read.xlsx("beelden/20251103_tabellen.xlsx",
+                   sheet = "tab2li2018",
+                   colNames =TRUE)
+ 
+
+tabli |> 
+  filter(!is.na(R0)) |> 
+  mutate(across(colnames(tabli)[-(1)],rc)) |> 
+  gt(id="thirteen",rowname_col = "Item") |> 
+  tab_header("Invloed van toenemend aandeel rode klaver in luzernekuil.")
+```
+
+
+<div class="rf">Bron: @Li2018</div>
+
+# Ruwvoerwinning: Samenvatting
+
+- Snelheid van drogen
+- Snelheid van conserveren
+
+![](beelden/grafieken.png)
+
+# Eiwitbenutting 2. Verdeling van ruwvoer over groepen
+
+Aanwijzingen:
+
+1. Voer jongvee naar behoefte. Laat ouder jongvee weiden. Zorg dat ze geen eiwitrijk, ingekuild najaarsgras eten.
+2. Voer drogen naar behoefte en goed.
+3. Probeer ook melkkoeien in najaar te weiden of te stalvoeren. Benut zo eiwitrijke najaarsgras.
+4. Kuil eiwitrijke gras zo in dat je het graag aan melkkoeien voert.
+
+# Verloop van productie over jaren
+
+```{r productie,eval=FALSE}
+grafiek_productie(df2)
+```
+
 
 <iframe src="https://dashboard.costeranalytics.nl/dashboard_klein/" width="100%" height="100%" frameborder="0">
 

@@ -1,18 +1,58 @@
 ---
 title: "Nieuw dak op Manage Vjenneruiters"
 format:
-  revealjs: 
-    theme: 
-     - moon
+  html
 editor: visual
 lang: nl
+scrollable: true
 output-dir: docs
+title-block-banner: beelden/logo-vjenneruiters.svg
 ---
+
+<style>
+  .blauw-blok {
+    display: flex;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 2rem;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .blauw-blok img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .blauw-blok {
+      flex-direction: column;
+    }
+  }
+</style>
 
 ## Situatie
 
-::: {.callout-note appearance="simple"  icon=false}
+::: {.kop}
+##
+Renovatie Dak Vjenneruiters
+:::
 
+<div class="blauw-blok">
+  <div class="tekst-container">
+    ## Titel van je blok
+    
+    Dit is de tekst die naast de afbeelding staat. Met behulp van de CSS-code hierboven wordt dit netjes naast een afbeelding geplaatst. Op kleinere schermen zal het onder elkaar verschijnen.
+  </div>
+  <div class="afbeelding-container">
+    <img src="https://via.placeholder.com/400x300/0000FF/FFFFFF?text=Jouw+afbeelding" alt="Beschrijving van de afbeelding" />
+  </div>
+</div>
+
+
+::: {.callout-note appearance="simple" icon="false"}
 ## Aanleiding
 
 -   Door hagelbui zijn lichtplaten dak lek
@@ -20,8 +60,7 @@ output-dir: docs
 -   Deel van dak is asbest, moet daarom gesaneerd worden
 :::
 
-
-::: {.callout-warning appearance="simple"  icon=false}
+::: {.callout-warning appearance="simple" icon="false"}
 ## Overwegingen
 
 -   Dak moet vernieuwd worden
@@ -29,23 +68,34 @@ output-dir: docs
 -   Voorstel: combinatie van lening bij bank en geld ophalen bij leden
 :::
 
-## Opties
-
-::: {.callout-tip appearance="simple"  icon=false}
+::: {.callout-tip appearance="simple" icon="false"}
 ## Bank
+
 -   Lening voor 25 jaar, ca 5-7% rente
 -   Is zware last voor vereniging
 -   Vraag is òf en hoeveel bank financiert
 :::
 
-::: {.callout-important appearance="simple"  icon=false}
+::: {.callout-important appearance="simple" icon="false"}
 ## Leden en anderen
 
 3 opties
 
 -   Lening
 -   Obligatie
--   Schenking 
-
+-   Schenking
 :::
 
+:::::: newgoals
+## Learning Goals
+
+::::: grid
+::: g-col-4
+This column takes 1/3 of the page
+:::
+
+::: g-col-8
+This column takes 2/3 of the page
+:::
+:::::
+::::::
