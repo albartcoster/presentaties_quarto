@@ -18,7 +18,7 @@ if (any(installed_packages == FALSE))
   install.packages(packages[!installed_packages])
 invisible(lapply(packages, library, character.only = TRUE))
 
-path <- '../..'
+path <- 'C:/Users/Eigenaar/OneDrive - Dairyconsult/bedrijf/Dairyconsult_Albart'
 path2 <- "punt_envs"
 load_dot_env(file.path(path,path2,".env_postgres"))
 load_dot_env(file.path(path,path2,".env_voerkosten"))
@@ -184,7 +184,7 @@ grafiek_celclasses <- function(df=NULL,classes=FALSE){
 
 ## shiny voor verloop productie
 stat <- paste("select farms_id,lactation,dim,date_time,pedigree_id,production from view_productions 
-              where farms_id in (293,244,220)
+              where farms_id in (293,244,220,334)
               and lactation < 4
               and production>0
               and date_time > '2020-01-01'
