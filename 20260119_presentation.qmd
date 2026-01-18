@@ -127,7 +127,48 @@ tab1
 
 ![Schema Grant](beelden/fig_grant_2025.png){width="50%"}
 
+::: rf
 From: @grant2025 and @grant2023
+:::
+
+
+## Manure evaluation and silage quality
+
+See [Presentation Mary Beth Hall, Balchem](https://balchem.com/wp-content/uploads/2026/01/Manure_Evaluation_Figuring_Out_Whats_Going_on_Between_Cows__Their_Rations.pdf)
+
+Page 15: Dairrhea, sign of ruminal acidosis, but can also be caused by spoiled feed!!
+
+![](beelden/figuur_1_lima_2017.png)
+
+```{r,echo=FALSE,results='asis'}
+tabl1 <- read.xlsx("beelden/20251103_tabellen.xlsx",
+                   sheet = "tab1lima2017",
+                   colNames = TRUE)
+
+tabl1 |>
+  gt(id="eight",rowname_col = "Item") |> 
+    tab_header("Characteristics of the sheet.")
+
+
+tabl3 <- read.xlsx("beelden/20251103_tabellen.xlsx",
+                   sheet = "tab3lima2017",
+                   colNames = TRUE) 
+
+tabl3 |> gt(id = "nine",rowname_col = 'item') |> 
+  tab_header("Characteristics of the silage.")
+
+tabl4 <- read.xlsx("beelden/20251103_tabellen.xlsx",
+                   sheet = "tab4lima2017",
+                   colNames = TRUE)
+
+tabl4 |> gt(id = "ten",rowname_col = 'item') |> 
+  tab_header("Feed quality in the silage.") 
+```
+
+::: rf
+Bron: @Lima2017
+:::
+
 
 ## References
 
