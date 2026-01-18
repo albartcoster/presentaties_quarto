@@ -56,7 +56,7 @@ lbls <- c('0-30 DIL',
           '300-400 DIL')
 
 stat <- paste("select farms_id,lactation,dim,date_time,pedigree_id,production,ureum,fat_pct,cells from view_melkcontrole 
-              where farms_id in (293,244,46)
+              where farms_id in (293,244,46,334)
               and date_time > '2021-01-01' 
               and lactation < 6
               and cells >0
@@ -82,28 +82,49 @@ df <- df0 |>
 
 ## Shiny voor verloop ureum
 
-grafiek_ureum <- function(df = NULL){
+grafiek <- function(dfu = NULL){
   library(shiny)
+  library(bslib)
   
   shinyApp(
   ui = fluidPage(
-    selectInput('farm','Bedrijf:',
+    navset_card_underline(
+      nav_panel("Ureum",
+        selectInput('farmu','Bedrijf:',
                 choices = unique(df$farms_id)),
-    sliderInput(
-      'lactations',"Laktaties:",
-      min = 1,max = max(df$lactation),
-      step = 1,
-      value = c(1,3)
-    ),
-    echarts4rOutput("plot")
-  ),
+        sliderInput(
+        'lactationsu',"Laktaties:",
+        min = 1,max = max(df$lactation),
+        step = 1,
+        value = c(1,3)
+        ),
+      echarts4rOutput("plotu")),
+      nav_panel("Productie",
+                selectInput('farmp','Bedrijf:',
+                            choices = unique(df2$farms_id),
+                            selectize = T,
+                            multiple = T),
+                sliderInput(
+                  'lactationsp',"Laktaties:",
+                  min = 1,max = max(df2$lactation),
+                  step = 1,
+                  value = c(1,3)
+                ),
+                sliderInput( 
+                  "dilsp", "Laktatiedagen", 
+                  min = 0, max = max(df2$dim)+1, 
+                  value = c(30, 60) 
+                ), 
+                echarts4rOutput("plotp")
+      )
+    )),
   
   server = function(input, output) {
-    output$plot = renderEcharts4r({
-      df |> filter(farms_id==input$farm&
+    output$plotu = renderEcharts4r({
+      df |> filter(farms_id==input$farmu&
                      ureum>0&
-                     lactation>=input$lactations[1]&
-                     lactation<=input$lactations[2]) |> 
+                     lactation>=input$lactationsu[1]&
+                     lactation<=input$lactationsu[2]) |> 
         group_by(farms_id,date_time,dilcat) |> 
         summarise(ureum = sum(production*ureum,na.rm = T)/sum(production,na.rm = T)) |> 
         group_by(dilcat) |> 
