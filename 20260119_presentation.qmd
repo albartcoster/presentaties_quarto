@@ -147,7 +147,7 @@ tabl1 <- read.xlsx("beelden/20251103_tabellen.xlsx",
 
 tabl1 |>
   gt(id="eight",rowname_col = "Item") |> 
-    tab_header("Characteristics of the sheet.")
+    tab_header("Eigenschappen van de folie.")
 
 
 tabl3 <- read.xlsx("beelden/20251103_tabellen.xlsx",
