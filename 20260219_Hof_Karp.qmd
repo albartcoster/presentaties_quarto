@@ -1,0 +1,56 @@
+---
+title: "Grundfutter 2025-2026, Hof Karp"
+author: "[albart@dairyconsult.nl](mailto:albart@dairyconsult.nl)"
+  
+date: "2-19-2026"
+engine: knitr
+format:
+  revealjs:
+    scrollable: true
+lang: nl
+auto-stretch: false
+output-dir: docs
+bibliography: bib_albart.json
+css: styles.css
+lang: de
+--- 
+
+```{r}
+#| label: start
+#| echo: false
+#| results: 'hide'
+#| warning: false
+packages <- c("echarts4r",
+              "openxlsx",
+              "dplyr",
+              "stringr",
+              "gt")
+installed_packages <- packages %in% rownames(installed.packages())
+if (any(installed_packages == FALSE))
+  install.packages(packages[!installed_packages])
+invisible(lapply(packages, library, character.only = TRUE))
+load("beelden/20260127_grafieken.Rda")
+```
+
+## Inhalt
+
+- Evaluierung Silages 2025
+- Evaluierung Leistung 2025 Kraak
+- Evaluierung Leistung 2025 Goldenstädt
+- Ausblick Grundfutter 2026:
+  - Ackergrass
+  - Wiesengrass
+  - Herbstgrass
+  - Silages Fahrbinde
+  - Silages für Trockensteher
+- Faser und Partikelgröße
+- Silage, Verdichtung und Qualität
+- Evaluierung Einstreu Kraak und Goldenstädt
+- Ausblick Einstreu
+
+
+
+
+## Literaturliste
+
+

@@ -1,8 +1,8 @@
 ---
-title: "Presentatie Studiegroep Ommen"
+title: "Grundfutter 2025-2026, Hof Karp"
 author: "[albart@dairyconsult.nl](mailto:albart@dairyconsult.nl)"
   
-date: "1-27-2026"
+date: "2-19-2026"
 engine: knitr
 format:
   revealjs:
@@ -12,6 +12,7 @@ auto-stretch: false
 output-dir: docs
 bibliography: bib_albart.json
 css: styles.css
+lang: de
 --- 
 
 ```{r}
@@ -69,7 +70,7 @@ tabgs <- data.frame(name = c("graskuil",
                     RE = c(212,72,84,426),
                     DVE = c(75,59,93,219),
                     FOS = c(571,503,600,531)) |> 
-  mutate(DVME = FOS * 0.85*0.75) |> 
+  mutate(DVME = FOS * 0.85*0.75*.15) |> 
   gt(id = "een",rowname_col = "name") |> 
   fmt_number(columns = DVME,decimals = 2)
 tabgs
@@ -595,7 +596,7 @@ tabnl |>
   tab_row_group("Luzerne, gemaaid 21-6-1951 13:30",
                 rows = 11:13) |> 
   tab_row_group("Spaanse Dravik, gemaaid 11-7-1951 11:00",
-                rows = 8:10) |> 
+                rows = 14:16) |> 
   tab_header(title = "Invloed van tijd en weer op Vit D3 gehalte in grassen.") 
 ```
 
