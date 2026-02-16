@@ -7,12 +7,11 @@ engine: knitr
 format:
   revealjs:
     scrollable: true
-lang: nl
+lang: de
 auto-stretch: false
 output-dir: docs
 bibliography: bib_albart.json
 css: styles.css
-lang: de
 --- 
 
 ```{r}
@@ -23,13 +22,13 @@ lang: de
 packages <- c("echarts4r",
               "openxlsx",
               "dplyr",
+              "tidyr",
               "stringr",
               "gt")
 installed_packages <- packages %in% rownames(installed.packages())
 if (any(installed_packages == FALSE))
   install.packages(packages[!installed_packages])
 invisible(lapply(packages, library, character.only = TRUE))
-load("beelden/20260127_grafieken.Rda")
 ```
 
 ## Inhalt
@@ -48,7 +47,344 @@ load("beelden/20260127_grafieken.Rda")
 - Evaluierung Einstreu Kraak und Goldenstädt
 - Ausblick Einstreu
 
+## Silages 2025
 
+**1e Schnitt Ackergrass 2025**
+
+![](beeld_hk/20251esackergrass.jpg)
+
+
+<details>
+<summary>Links war sehr nass</summary>
+<iframe src="beeld_hk/1 Schnitt links 10231075 STD.pdf" width="95%" height = "600pt" ></iframe>
+</details>
+
+
+<details>
+<summary>Rechts viel trockner</summary>
+<iframe src="beeld_hk/1 Schnitt Ackergras rechts 10231076 STD.pdf" width="95%" height = "600pt" ></iframe>
+</details>
+
+## Silages 2025
+
+**4e S. 2025**
+
+![](beeld_hk/20254es.jpg)
+<details>
+<summary>Auch eine Misschung</summary>
+<iframe src="beeld_hk/Hof Karp Kraak 4 Schnitt 2025 Gras 10235577 STD.pdf" width="95%" height = "600pt" ></iframe>
+</details>
+
+## Silages 2025
+
+4e S. 2025 hat nicht gut gelaufen in der Trockenstand. Es gab noch Grass Grambow 2023:
+
+<details>
+<summary>Grass Grambow 2023</summary>
+<iframe src="beeld_hk/Hof Karp Kraak Grambow Grassilage 10222549 STD.pdf" width="95%" height = "600pt" ></iframe>
+</details>
+
+<details>
+<summary>Ration mit 4e S. 2025</summary>
+<iframe src="beeld_hk/20251128_Ration_VB.pdf" width="95%" height = "600pt" ></iframe>
+</details>
+
+<details>
+<summary>Ration mit Grass Grambow 2023</summary>
+<iframe src="beeld_hk/20260121_Ration_VB.pdf" width="95%" height = "600pt" ></iframe>
+</details>
+
+```{r}
+#| label: "transit"
+#| echo: false
+#| results: asis
+
+tabt <- read.xlsx("beeld_hk/data_hk.xlsx",
+                   sheet = "transit",
+                  detectDates = T,
+#                  col_types = c("date","numeric","numeric","numeric"),
+                   colNames = TRUE) |> 
+  mutate(mf = mf/kalbung*100,
+         ng = ng/kalbung*100) |> 
+  e_charts(datum) |> 
+  e_bar(mf) |> 
+  e_bar(ng)
+```
+
+## Silages 2025
+
+**Silo am Feld**
+
+![](beeld_hk/feldsilo2025.jpg)
+**Fahrbinde**
+![](beeld_hk/fb1.jpg)
+![](beeld_hk/fb2.jpg)
+
+**Grunroggen**
+
+- Keine Analyse
+- ~20% TS, hat gut gelaufen
+
+Nächstes Jahr; gerne Trockner
+
+## Silages 2025
+
+**Mais**
+
+![](beeld_hk/korner.jpg){width=50%}
+
+![](beeld_hk/20250918_141442.jpg){width=50%}
+![](beeld_hk/20250918_153730.jpg){width=50%}
+
+![](beeld_hk/mais2025.jpg){width=50%}
+![](beeld_hk/20240221_081658.jpg){width=50%}
+![](beeld_hk/20240221_081422.jpg){width=50%}
+
+## (Mais)silage
+
+Verdichtung, Sauerstoff und Qualität
+
+![](beeld_hk/cromato.png){width=50%}
+
+
+::: rf
+Quelle: [https://shorturl.at/xmfVM](https://shorturl.at/xmfVM)
+:::
+
+
+
+::: {.callout-note appearance='simple'}
+
+## Übersetzung
+
+Der neue Trend der Hochsilos auf Plattformen ist keineswegs nur eine Modeerscheinung, sondern die neue Realität! Die Steigerung der Dichte pro Kubikmeter und die unvergleichliche Verbesserung der Fermentation begeistern jeden, der es ausprobiert... und das sage nicht nur ich, das belegen die Analysen zusammen mit den Ergebnissen der Milchleistung! Also gewöhnt euch lieber gleich daran... und zwar ALLE!
+:::
+
+
+Und auch die Präsentation von Mary Beth Hall, min 17:30:
+
+{{< video "https://youtu.be/PR1FfXxlLnY?t=955 ?start=1050" ?start=1050 >}}
+
+
+
+![](beelden/figuur_1_lima_2017.png)
+
+```{r}
+#| label: "folie"
+#| echo: false
+#| results: asis
+
+tabl1 <- read.xlsx("beelden/20251103_tabellen.xlsx",
+                   sheet = "tab1lima2017",
+                   colNames = TRUE)
+
+tabl1 |>
+  gt(id="eight",rowname_col = "Item") |> 
+    tab_header("Folie.")
+
+
+tabl3 <- read.xlsx("beelden/20251103_tabellen.xlsx",
+                   sheet = "tab3lima2017",
+                   colNames = TRUE) 
+
+tabl3 |> gt(id = "nine",rowname_col = 'item') |> 
+  tab_header("Silage.")
+
+tabl4 <- read.xlsx("beelden/20251103_tabellen.xlsx",
+                   sheet = "tab4lima2017",
+                   colNames = TRUE)
+
+tabl4 |> gt(id = "ten",rowname_col = 'item') |> 
+  tab_header("Futterqualität.") 
+```
+
+::: rf
+Quelle: @Lima2017
+:::
+
+## Praxis
+
+**Verdichtung und Futterqualität**
+
+```{r}
+#| label: "dichthied"
+#| echo: FALSE
+#| results: 'asis'
+
+tabd <- read.xlsx("beeld_hk/data_hk.xlsx",
+                   sheet = "verdichtung",
+                  detectDates = T,
+                   colNames = TRUE) |> 
+  group_by(Kunde,Ort) |> 
+  e_charts(Ort) |> 
+  e_bar(Dichte) |> 
+  e_axis_labels( x="Ort",y = "Dichte (g/L)")
+tabd
+
+tabq <- read.xlsx("beeld_hk/data_hk.xlsx",
+                   sheet = "GP",
+                  detectDates = T,
+                   colNames = TRUE) |>
+  gt(id = "fq",rowname_col = 'X1') |> 
+  tab_header("Futterqualität.")
+tabq
+
+```
+
+
+## Leistung Kraak und Goldenstädt
+
+<iframe 
+  src="https://dashboard.costeranalytics.nl/dashboard_productie_rhino/" 
+  width="110%" 
+  height="700px" 
+  style="border:none;">
+</iframe>
+
+- Nummer 1990031 für Hof Karp
+- Nummer 9790576 für Goldenstädt
+
+
+## Ausblick Grundfutter 2026
+
+**Ackergrass und Wiesengrass gute Qualität**
+
+Gerne etwas trocken, damit maximale Qualität:
+
+
+```{r}
+#| label: "tabsbauer2025"
+#| echo: false
+#| results: asis
+
+tabb2 <- read.xlsx("beelden/20251103_tabellen.xlsx",
+                   sheet = "tab2bauer2025",
+                   colNames = TRUE)
+
+tabb2 |> 
+  filter(!is.na(Silage))|> 
+  gt(id = "tab2bauer2025") |> 
+  tab_row_group("Intake of DM (kg/d)",rows = 1:3) |> 
+  tab_row_group("Intake of nutrients (kg/d",rows = 4:10) |>
+  tab_header("Least squares means for the effects of silage and hay on dairy cows' intake of DM, nutrients, and energy")
+
+tabb4 <- read.xlsx("beelden/20251103_tabellen.xlsx",
+                   sheet = "tab4bauer2025",
+                   colNames = TRUE)
+
+tabb4 |> 
+  filter(!is.na(Silage)) |> 
+  gt(id = "tab4bauer2025") |> 
+  tab_row_group("Milk parameters",rows = 1:11) |> 
+  tab_row_group("BW and BCS",rows = 12:17) |> 
+  tab_row_group("Efficiency and balances",rows = 18:21) |> 
+  tab_header("Least squares means for the effects of silage and hay on dairy cows' performance, body condition, energy balance, and efficiency.")
+
+tabb5 <- read.xlsx("beelden/20251103_tabellen.xlsx",
+                   sheet = "tab5bauer2025",
+                   colNames = TRUE)
+
+tabb5 |> 
+  gt(id = "tab5bauer2025") |>
+  tab_header("Least squares means for the effects of silage and hay on pH and VFA concentrations in feces.")
+```
+
+
+## Ausblick Grundfutter 2026
+
+**Häcksellänge:**
+
+- Bis jetzt: peNDF. %NDF in Ration * % (3 Obensieben Pennstate box)
+
+In @grant2025:
+
+- peuNDF240: %(3 Obenboxen)*uNDF240. Ziel 4-6%. Damit: mit niedrige uNDF240, langere Teilen!
+- Ziel 3-5 Std/Tag fressen und >500 min/Tag Wiederkauen
+- Fresszeit und Wiederkauzeit in Konliktieren: 
+- Liegend Wiederkauen!
+
+```{r}
+#| label: tab-1
+#| echo: false
+#| results: 'asis'
+#| warning: false
+
+tab0 <- data.frame(item = c('Long hay',
+                            '50 mm rye hay',
+                            '19 mm PSPS rye hay',
+                            '8 mm PSPS rye hay',
+                            '1.18 mm PSPS rye hay',
+                            'Grass Silage',
+                            'Corn Silage',
+                            "TMR"),
+                   NDF = c(51.7,
+                           58.6,
+                           57.9,
+                           59.1,
+                           54.2,
+                           53.1,
+                           48.1,
+                           37.7),
+                   size = c(NA,
+                            42.2,
+                            43.5,
+                            25.1,
+                            9.7,
+                            13.8,
+                            12,
+                            13.1),
+                   size_bolus = c(10.3,
+                                  9.9,
+                                  10.7,
+                                  10.8,
+                                  8.1,
+                                  11.6,
+                                  11.2,
+                                  12.5),
+                   chewsgram = c(2.6,
+                                 3.5,
+                                 2.2,
+                                 1.7,
+                                 1.9,
+                                 .4,
+                                 0.7,
+                                 0.6)
+                                 ) |> 
+  gt(rowname_col = "item") |> 
+  cols_label(NDF = "NDF %DM",
+             size = "Feed particle size",
+             size_bolus = "Bolus particle size",
+            chewsgram = "Chews per gram")
+tab0
+
+tab1 <- data.frame(item = c("DMI, kg/d",
+                            "Eating, min/d",
+                            'Ruminating, min/d',
+                            'Chewing, min/d',
+                            'Resting, min/d'),
+                   p40 = c(22.4,286,426,712,728),
+                   p50 = c(21.5,292,454,745,695),
+                   p60= c(20.3,342,471,813,627),
+                   p70 = c(18.1,393,461,853,587))|> 
+  gt(rowname_col = "item") |> 
+  cols_label(p40 = "40%",
+             p50 = "50%",
+             p60="60%",
+             p70 ="70%") |> 
+  tab_spanner(
+    label = md('Dietary forage (%DM)'),
+    columns = 2:5)
+tab1  
+```
+
+
+![Schema Grant](beelden/fig_grant_2025.png){width="50%"}
+
+![Liegend Wiederkauen](beeld_hk/20250912_123451.mp4){width="80%"}
+
+::: rf
+Quelle: @bauer2025 , @grant2025 und @grant2023
+:::
 
 
 ## Literaturliste

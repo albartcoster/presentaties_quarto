@@ -68,7 +68,7 @@ Van Leeuwen, 2025
 
 
 ```{r}
-#| labe: "tabsbauer2025"
+#| label: "tabsbauer2025"
 #| echo: false
 #| results: asis
 
@@ -110,7 +110,7 @@ tabb5 |>
 Also, Vitamin D3
 
 ```{r}
-#| labe: "tab-vitD"
+#| label: "tab-vitD"
 #| echo: false
 #| results: asis
 
