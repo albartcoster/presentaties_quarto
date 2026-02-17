@@ -56,13 +56,13 @@ invisible(lapply(packages, library, character.only = TRUE))
 
 <details>
 <summary>Links war sehr nass</summary>
-<iframe src="beeld_hk/1 Schnitt links 10231075 STD.pdf" width="95%" height = "600pt" ></iframe>
+<iframe src="pdfs/1 Schnitt links 10231075 STD.pdf" width="95%" height = "600pt" ></iframe>
 </details>
 
 
 <details>
 <summary>Rechts viel trockner</summary>
-<iframe src="beeld_hk/1 Schnitt Ackergras rechts 10231076 STD.pdf" width="95%" height = "600pt" ></iframe>
+<iframe src="pdfs/1 Schnitt Ackergras rechts 10231076 STD.pdf" width="95%" height = "600pt" ></iframe>
 </details>
 
 ## Silages 2025
@@ -72,26 +72,28 @@ invisible(lapply(packages, library, character.only = TRUE))
 ![](beeld_hk/20254es.jpg)
 <details>
 <summary>Auch eine Misschung</summary>
-<iframe src="beeld_hk/Hof Karp Kraak 4 Schnitt 2025 Gras 10235577 STD.pdf" width="95%" height = "600pt" ></iframe>
+<iframe src="pdfs/4 Schnitt 2025 Gras 10235577 STD.pdf" width="95%" height = "600pt" ></iframe>
 </details>
 
 ## Silages 2025
 
 4e S. 2025 hat nicht gut gelaufen in der Trockenstand. Es gab noch Grass Grambow 2023:
 
+![](beeld_hk/mais_grass_gb.jpeg)
+
 <details>
 <summary>Grass Grambow 2023</summary>
-<iframe src="beeld_hk/Hof Karp Kraak Grambow Grassilage 10222549 STD.pdf" width="95%" height = "600pt" ></iframe>
+<iframe src="pdfs/Grambow Grassilage 10222549 STD.pdf" width="95%" height = "600pt" ></iframe>
 </details>
 
 <details>
 <summary>Ration mit 4e S. 2025</summary>
-<iframe src="beeld_hk/20251128_Ration_VB.pdf" width="95%" height = "600pt" ></iframe>
+<iframe src="pdfs/20251128_Ration_VB.pdf" width="95%" height = "600pt" ></iframe>
 </details>
 
 <details>
 <summary>Ration mit Grass Grambow 2023</summary>
-<iframe src="beeld_hk/20260121_Ration_VB.pdf" width="95%" height = "600pt" ></iframe>
+<iframe src="pdfs/20260121_Ration_VB.pdf" width="95%" height = "600pt" ></iframe>
 </details>
 
 ```{r}
@@ -109,6 +111,7 @@ tabt <- read.xlsx("beeld_hk/data_hk.xlsx",
   e_charts(datum) |> 
   e_bar(mf) |> 
   e_bar(ng)
+tabt
 ```
 
 ## Silages 2025
@@ -163,7 +166,7 @@ Der neue Trend der Hochsilos auf Plattformen ist keineswegs nur eine Modeerschei
 
 Und auch die Präsentation von Mary Beth Hall, min 17:30:
 
-{{< video "https://youtu.be/PR1FfXxlLnY?t=955 ?start=1050" ?start=1050 >}}
+{{< video https://youtu.be/PR1FfXxlLnY start="1050" >}}
 
 
 
@@ -231,6 +234,40 @@ tabq
 
 ```
 
+## CCM
+
+![](beeld_hk/CCM_kr.jpeg)
+![](beeld_hk/CCM_gs.jpeg)
+
+
+## Goldenstädt
+
+**Mais**, sehr trocken. Versorgung sehr gut
+
+<details>
+<summary>Mais GS</summary>
+<iframe src="pdfs/gs_mais_2024.pdf" width="95%" height = "600pt" ></iframe>
+</details>
+
+![](beeld_hk/mais_gs.jpeg)
+
+![](beeld_hk/kot_gs.jpg){style="transform: rotate(90deg);"}
+![](beeld_hk/kot_gs2.jpg){style="transform: rotate(90deg);"}
+
+## Goldenstädt
+
+**Grass**, versorgung sehr gut:
+
+
+<details>
+<summary>Grass GS</summary>
+<iframe src="pdfs/gs_grass2eS.pdf" width="95%" height = "600pt" ></iframe>
+</details>
+
+
+![](beeld_hk/grass_gs.jpeg)
+
+
 
 ## Leistung Kraak und Goldenstädt
 
@@ -245,9 +282,7 @@ tabq
 - Nummer 9790576 für Goldenstädt
 
 
-## Ausblick Grundfutter 2026
-
-**Ackergrass und Wiesengrass gute Qualität**
+## Ausblick Grundfutter 2026, Ackergrass und Wiesengrass gute Qualität
 
 Gerne etwas trocken, damit maximale Qualität:
 
@@ -290,7 +325,7 @@ tabb5 |>
 ```
 
 
-## Ausblick Grundfutter 2026
+## Ausblick Grundfutter 2026, Grass Allgemein
 
 **Häcksellänge:**
 
@@ -385,6 +420,170 @@ tab1
 ::: rf
 Quelle: @bauer2025 , @grant2025 und @grant2023
 :::
+
+
+## Ausblick Grundfutter 2026, Wiesengrass
+
+- Perfektes Futter für Trockensteher, wenn Trocken einsiliert
+- Auch perfect für Jungrinder!
+- Dann gerne relativ Kürz Häckseln. 
+
+## Ausblick Grundfutter 2026, Wiesengrass nasser
+
+- Mit TS > 30%, einsilieren für MK Gerne immer mit 10% Mais (1 Schaufel/Hänger)
+- Mit TS < 30%, einsilieren mit 20% Mais. Beobachten das Mais durch das Futter kommt
+
+## Ausblick 2026, Jungrinder (Fahrbinde)
+
+- Mais und Grass wegfuttert. 
+- Bei jedem Ernte, 10-20 Mais versorgen von Kraak oder Goldenstädt. Durchmischen. Damit eine komplette Ration für die ältere Tiere, besseres Silomanagement, und, sehr wichtig, bessere Silages
+
+![Grass + Mais](beeld_hk/lb2.jpg){width="80%"}
+![Grass + Mais](beeld_hk/lb3.jpg){width="80%"}
+![Fütterung](beeld_hk/lb1.jpg){width="80%"}
+
+## Ausblick 2026, Mais
+
+- Perfekte verdichtung überall (>750 kg/m3; >260 kg TM/m3)
+- Körner sehr gut gequetscht:
+
+{{< video https://youtu.be/uYoSJI25lYM start="308">}}
+
+Und:
+
+
+```{r}
+#| label: "tabdichte"
+#| echo: false
+#| results: asis
+
+tabD <- read.xlsx("beeld_hk/data_hk.xlsx",
+                   sheet = "dichte",
+                   colNames = TRUE) |> 
+  mutate(hohe = as.numeric(hohe))|>
+  mutate(perc_korner = paste(perc_korner,"% Körner")) |> 
+  group_by(perc_korner) |> 
+  e_charts(hohe) |> 
+  e_line(dichte) |> 
+  e_y_axis(max = 300 , min = 150) |> 
+  e_x_axis(max = 3.5,min = 2.3) |> 
+   e_axis_labels( x="Höhe",y = "Dichte (g/L)")
+tabD
+```
+
+
+::: rf
+Quelle: @damours2005
+:::
+
+## Ausblick 2026
+
+Ideeen:
+
+- Anbau Luzerne? Ziel NDF < 40%, RP > 20%. Gerne Trocken
+- Anbau Teffheu? Viel Sucker, *Emergency crop*
+- Mischung Grass + Mais für Jungrinder
+
+## Liegeboxen
+
+Liegend wiederkauen, @grant2025
+
+Dafür:
+
+**Große, bequame und saubere Liegeboxen**
+
+![Saubere Liegeboxen](beelden/fig4_tucker2021.jpg){width="80%"}
+![Großë Liegeboxen](beelden/fig7_brouwers_2024.jpg){width="80%"}
+```{r}
+#| label: tabknieboom
+#| echo: false
+#| results: 'asis'
+#| warning: false
+
+tab <- data.frame(name = c("Liegezeit, Stu/Tag",
+                           "Liegemomenten, #/Tag",
+                           "Länge Liegemoment, Min/Tag",
+                           "Stehezeit, Min/Tag"),
+                  GK = c(12.8,
+                               8.3,
+                               1.7,
+                               97),
+                  WK = c(11.6,
+                         8.7,
+                         1.5,
+                         119)) |> 
+  gt(rowname_col = "name") |> 
+  tab_header(title = "Liegeverhalten in verschiedene Boxen") |> 
+  tab_spanner(label = "Knieriegel",columns  = c(2:3))|> 
+  cols_label(GK = html("Kein Knieriegel"),
+             WK = html("Ja Knieriegel"))
+```
+
+::: {.r-stack}
+![Box](beelden/kristen/kristen_1.jpg){.fragment width="450" height="300"}
+
+![Box](beelden/kristen/kristen_2.jpg){.fragment width="450" height="300"}
+
+![Box](beelden/kristen/kristen_3.jpg){.fragment width="450" height="300"}
+
+![Box](beelden/kristen/kristen_4.jpg){.fragment width="450" height="300"}
+
+![Box](beelden/kristen/kristen_5.jpg){.fragment width="450" height="300"}
+
+![Box](beelden/kristen/kristen_6.jpg){.fragment width="450" height="300"}
+:::
+
+![Box](beelden/engelen.jpg){.fragment width="450" height="300"}
+
+**Genug Liegeboxen**
+![Zahl Liegeboxen](beelden/fig3_tucker2021.jpg){width="80%"}
+
+Sehr wichtig für Leistung!!!
+
+![Zahl Liegeboxen](beelden/fig_2_bach_2008.png){width="80%"}
+
+
+**Kuh braucht genug Zeit für Liegen**
+
+```{r}
+#| label: tabligtijd
+#| echo: false
+#| results: 'asis'
+#| warning: false
+
+tab1
+```
+
+![Aantal boxen](beelden/fig2_tucker2021.jpg){width="80%"}
+
+::: rf
+Quellen: @Bach2008,@tucker2021,@brouwers2024,@grant2025
+:::
+
+
+## Einstreu
+
+Goldenstädt:
+
+![Grass + Mais](beeld_hk/boxen_gs.jpg){width="80%"}
+
+Vorschlag, einsetzt Steinmehl oder Zeolith
+
+- Bindet $\textrm{NH}_3$
+- Gut für klauen
+- Haltet Liegboxen frei von Keime und trocken
+- Vielleicht später automatisieren, wie in Kuhpon??
+
+## Kraak
+
+Zellzahl, auch in GS wichtig
+
+<iframe 
+  src="https://dashboard.costeranalytics.nl/dashboard_productie_rhino/" 
+  width="110%" 
+  height="700px" 
+  style="border:none;">
+</iframe>
 
 
 ## Literaturliste
