@@ -493,6 +493,12 @@ Dafür:
 **Große, bequame und saubere Liegeboxen**
 
 ![Saubere Liegeboxen](beelden/fig4_tucker2021.jpg){width="80%"}
+
+
+[Einstreu auf Linkedin](https://www.linkedin.com/posts/threemile-canyon-farms_did-you-know-we-use-composted-solids-from-activity-7429245617983520769-y653?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAT7UisBmSNlLCpNLn-1sNH7SCo9iTwR57E)
+
+
+
 ![Großë Liegeboxen](beelden/fig7_brouwers_2024.jpg){width="80%"}
 ```{r}
 #| label: tabknieboom
@@ -534,6 +540,8 @@ tab <- data.frame(name = c("Liegezeit, Stu/Tag",
 :::
 
 ![Box](beelden/engelen.jpg){.fragment width="450" height="300"}
+
+
 
 **Genug Liegeboxen**
 ![Zahl Liegeboxen](beelden/fig3_tucker2021.jpg){width="80%"}
