@@ -6,6 +6,7 @@ engine: knitr
 format:
   revealjs:
     scrollable: true
+    auto-stretch: false
 lang: de
 output-dir: docs
 bibliography: bib_albart.json
@@ -388,7 +389,15 @@ tabr |>
 - Roggen-, Grass- und Luzerne gerne etwas trocken
 - Wenn nicht trocken genug, immer mischen mit 10% Mais in jedem Hänger
 - Sauberigkeit Silages sehr gut beobachten
+
+
+
+![Mais](beelden/2025_mais_lb.jpg){width="80%}
+
 - Mais: körner sehr gut beobachten
+
+<iframe data-src="https://www.youtube.com/embed/uYoSJI25lYM?start=325" width="800" height="450" frameborder="0" allowfullscreen></iframe>
+
 
 ## Quellen
 
