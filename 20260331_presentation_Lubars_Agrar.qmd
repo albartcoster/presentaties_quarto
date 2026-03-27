@@ -42,7 +42,7 @@ invisible(lapply(packages, library, character.only = TRUE))
 
 - Höhe Qualität
 - Kein Verlust, Gammel, Schmutz
-- Scheckhaft
+- Schmackhaft
 
 ## Was passiert beim Einsilieren
 
@@ -60,12 +60,12 @@ Quelle: [https://bit.ly/4d0JQ5I](https://bit.ly/4d0JQ5I)
 
 ## Wie gelingt eine Grass-, Luzerne-, Roggensilage am besten?
 
-- Wert trocken einsiliert
+- Wird trocken einsiliert
 - Trocknet schnell am Feld
-- Wert gut verdichtet
-- Wert gut abgedeckt
+- Wird gut verdichtet
+- Wird gut abgedeckt
 - Konserviert damit schnell
-- Wert gut und sauber aussiliert
+- Wird gut und sauber entnommen
 
 ## Trockensubstanz Silages
 
@@ -142,7 +142,7 @@ Quellen: @Hengeveld1983,@spoelstra1990, @bauer2025,@groseth2025
 
 
 
-## Schnelle Trocknung auf Felt
+## Schnelle Trocknung auf Feld
 
 Beim Trocknen geht Qualität verloren
 
@@ -386,15 +386,21 @@ tabr |>
 
 ## Ausblick Silages 2026
 
-- Roggen-, Grass- und Luzerne gerne etwas trocken
+- Roggen-, Grass- und Luzerne gerne etwas trocken. Oder, sehr trocken...
+
+<iframe data-src="https://www.youtube.com/embed/sg-cSJM76fs?start=42" width="800" height="450" frameborder="0" allowfullscreen></iframe>
+
 - Wenn nicht trocken genug, immer mischen mit 10% Mais in jedem Hänger
+
+![Mais](beelden/mengsel_karp_1.jpg)
+
 - Sauberigkeit Silages sehr gut beobachten
-
-
 
 ![Mais](beelden/2025_mais_lb.jpg){width="80%}
 
 - Mais: körner sehr gut beobachten
+
+![](beelden/kot_moeckern.png)
 
 <iframe data-src="https://www.youtube.com/embed/uYoSJI25lYM?start=325" width="800" height="450" frameborder="0" allowfullscreen></iframe>
 
