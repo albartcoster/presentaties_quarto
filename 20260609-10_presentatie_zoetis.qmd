@@ -485,7 +485,7 @@ girafe(
 
 ![Transitie en leverwerking](beelden/figuur_6_bertoni2010.png)
 
-Studi
+Studie Bertoni
 :::
 
 ::: rf
@@ -547,6 +547,10 @@ Supplementatie met choline prepartum gaf gezondere kalverend die meer vraten en 
 ## Voorkomen van (hitte)stress in voorbereiding
 
 ![](beelden/figure_3_fabris_2018.png)
+::: rf
+Bron: @fabris2018
+:::
+
 
 ## Eigen aanpak
 
@@ -594,10 +598,35 @@ tabcells
 ## Maatregelen
 
 Zorg voor schone ligboxen
-Melk droge spenen
-Controleer dieren
-Let op hygiëne in transitiebereik
-Zorg voor schone kuilen en schoon voer
+
+![](beelden/fig_1_godden_2024.png)
+![](beelden/fig_2_godden_2024.png)
+
+```{r}
+#| message: false
+#| echo: false
+
+tgodden <- read.xlsx("beelden/20251103_tabellen.xlsx",
+                   sheet = "tab1godden2024",
+                   colNames = TRUE) |> 
+  gt(id = 'tgodden',rowname_col = "Item") |> 
+  sub_missing(columns =everything(),missing_text = "--") 
+tgodden
+```
+
+::: rf
+Bron: @godden2024
+:::
+
+## Maatregelen verder
+
+- Melk droge spenen
+
+![](beelden/northern-dairy-sanicleanse-teat-cleaner.png)
+
+- Controleer dieren
+- Let op hygiëne in transitiebereik. Vooral met stro
+- Zorg voor schone kuilen en schoon voer. Zie punt LPS uit kuilen
 
 ## Data en opfok
 
@@ -620,8 +649,32 @@ girafe(
 
 ## Maatregelen
 
-- Voorkom problemen bij kalveren
-- Voorkom longontsteking
+- Voorkom longontsteking bij kalveren. 
+
+![](beelden/fig_2_bach_2011.png){width=90%}
+
+::: rf
+Bron: @bach2011
+:::
+
+
+Let ook op [NH$_3$], zie [Podcast The Bullvine](https://www.thebullvine.com/news/dr-brays-5-sodium-bisulfate-gamble-zero-lung-lesions-and-the-real-cost-of-calf-barn-ammonia/)
+
+
+::: {#fig-ammoniak layout-ncol=2}
+
+![NH$_3$ meten](beelden/ammoniak.jpg) 
+
+![NH$_3$ in stal](beelden/ammoniak_stall.jpg)
+
+Ammoniak in de stal meten
+:::
+
+
+
+![](beelden/Screenshot 2026-06-02 223011.png)
+
+
 - Voer voldoende
 - Meet gewicht!!!
 
