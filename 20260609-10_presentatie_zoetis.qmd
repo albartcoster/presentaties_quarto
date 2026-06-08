@@ -1,5 +1,5 @@
 ---
-title: "Datadriven Dairy; uit perspectief van een nutritionist"
+title: "Datadriven Dairy; perspectief nutritionist"
 author: "Albart Coster"
 date: "6-9-2026"
 engine: knitr
@@ -204,9 +204,9 @@ tabsb |>
 Bron: @Borreani1999
 :::
 
-## Moment van schudden maakt echter ook uit:
+## Moment van schudden maakt echter ook uit: {.nostretch}
 
-![](beelden/figuur_4_savoie2002.png)
+![](beelden/figuur_4_savoie2002.png){width=300}
 
 ::: rf
 Bron: @Savoie2002
@@ -454,6 +454,116 @@ Bron: @Li2018
 
 ![](beelden/grafieken.png)
 
+## Data-driven en gehaltes in de melk
+
+[Link naar dashboard](https://dashboard.costeranalytics.nl/dashboard_productie_rhino/)
+
+## Gehaltes in melk
+
+- Seizoenseffecten
+
+::: {#fig-salfer layout-ncol=2}
+
+![Vet](beelden/fig_2_salfer_2019.jpg)
+
+![Eiwit](beelden/fig_3_salfer_2019.jpg)
+
+Studie Salter
+:::
+
+::: rf
+Bron: @salfer2019
+:::
+
+- Rantsoeneffecten; trans-vetzuren
+
+::: {#fig-transfat layout-ncol=2}
+
+![Biohydrogenatie](beelden/fig_2_bauman_2006.png)
+
+```{r}
+#| label: "tab-baumgard"
+#| echo: false
+#| results: 'asis'
+
+
+tabbg <- read.xlsx("beelden/20251103_tabellen.xlsx",
+                   sheet = "tab3_baumgard_2001",
+                   colNames = TRUE) |> 
+  gt(id = "baumgard",rowname_col = "item") |> 
+  tab_spanner(label = "Dosering CLA, C18:1 t10-c12",columns = 2:5)
+tabbg
+```
+
+Studies CLA
+
+:::
+
+::: rf
+Bronnen: @baumgard2001,@bauman2006
+:::
+
+## Gehaltes: toevoegingen
+
+- Palmitinezuur: verhoogt melkvet maar vermindert insulinesensitiviteit (@rico2016)
+
+::: {#fig-palmitinezuur layout-ncol=2}
+
+![Palmitinezuur](beelden/fig_2_parales_2025.jpg)
+
+```{r}
+#| label: "tab-parales"
+#| echo: false
+#| results: 'asis'
+
+tabpa <- read.xlsx("beelden/20251103_tabellen.xlsx",
+                   sheet = "tab_3_parales_2025",
+                   colNames = TRUE) |> 
+  dplyr::rename("C16:0+Chr." = 5) |> 
+  gt(id = "baumgard",rowname_col = "item") |> 
+  tab_spanner(label = "Behandeling",columns = 2:5) 
+
+
+
+tabpa
+
+```
+
+Effecten van palmitinezuur en chroom op insulinehuishouding
+
+:::
+
+
+::: rf
+Bronnen: @rico2016, @parales-giron2025
+:::
+
+- Oliezuur: verbetert verteerbaarheid van vet, verbetert conditie
+
+::: {#fig-oliezuur layout-ncol=2}
+
+
+![Invloed op opname en verteerbaarheid vet](beelden/fig_1_desouza2018.jpg){width=70%}
+
+
+![Invloed op productie](beelden/fig_3_desouza_2018.jpg){width=70%}
+
+Invloed van oliezuur op productie en gehaltes.
+
+:::
+
+
+::: rf
+Bron: @deSouza2018a
+:::
+
+
+- Omega 3 en omega-6 vetzuren. Invloed op gezondheid, ook op opname (zie oa @petit1992,)
+
+![Omega 3, omega 6 vetzuren](beelden/fig_3_petit1992.png)
+
+
+
 ## Data driven en sensortechnieken
 
 ```{r}
@@ -536,20 +646,23 @@ In sommige studies geen effect, @lee2019.
 
 ## Inzet van bestendige choline {.nostretch}
 
-Inzet van choline in rantsoen dat al uitgebalanceerd was voor methionine (2.5% van DVE) gaf minder ziektes en meer melk na afkalven en minder leververvetting @zenobi2018, onafhankelijk van energiegehalte van droogstandrantsoen:
+Inzet van choline in rantsoen dat al uitgebalanceerd was voor methionine (2.5% van DVE) gaf minder ziektes en meer melk na afkalven en minder leververvetting (@zenobi2018), onafhankelijk van energiegehalte van droogstandrantsoen:
 
 ![](beelden/fig_zenobi_2018.jpg)
 
-Supplementatie met choline prepartum gaf gezondere kalverend die meer vraten en harder groeiden  @zenobi2022 en @zenobi2018.
+Supplementatie met choline prepartum gaf gezondere kalverend die meer vraten en harder groeiden  (@zenobi2022 en @zenobi2018).
 
 ![](beelden/fig_zenobi_2022.jpg)
 
 ## Voorkomen van (hitte)stress in voorbereiding
 
 ![](beelden/figure_3_fabris_2018.png)
+
+
 ::: rf
 Bron: @fabris2018
 :::
+
 
 
 ## Eigen aanpak
@@ -586,6 +699,7 @@ girafe(
 
 ## Uiergezondheid en bewustwording
 
+::: {style="width: 100%; overflow: auto; resize: both; border: 1px solid #ccc; padding: 10px;"}
 ```{r}
 #| message: false
 #| echo: false
@@ -594,6 +708,7 @@ library(gt)
 
 tabcells
 ```
+:::
 
 ## Maatregelen
 

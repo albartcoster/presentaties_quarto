@@ -1,0 +1,28 @@
+---
+title: "Interactive Scalable Table"
+format: html
+css: custom.css
+---
+
+
+## *Data-driven*
+
+```{r}
+library(gt)
+library(dplyr)
+
+# Sample data
+head(mtcars) %>% 
+  gt() %>% 
+  opt_interactive(
+    use_page_size_select = TRUE,
+    use_sorting = TRUE,
+    use_search = TRUE
+  )
+```
+
+```{r}
+head(mtcars) %>%
+  gt() %>%
+  tab_options(quarto.disable_processing = TRUE)
+```

@@ -77,14 +77,15 @@ stat <- str_glue('select USER_ID,
                  where DATE BETWEEN "{mindat}" AND "{maxdat}"
                  and user_id IN {kids}')
 
-kvv <- quer_ms(stat)
+kvv <- quer_ms(stat) |> 
+  mutate(USER_ID = factor(USER_ID))
 
 kvvplot <- ggplot(data = kvv,
                   mapping=aes(x= KV100,
                               y = FPCM,
-                              color = factor(USER_ID),
+                              color = USER_ID,
                               tooltip=USER_ID,
-                              data_id=DATE))+
+                              data_id=USER_ID))+
   geom_point_interactive(size = 3,hover_nearest = T) + 
   labs(
     title = "Verband krachtvoerverbruik - Productie",
@@ -92,6 +93,19 @@ kvvplot <- ggplot(data = kvv,
     color = "Bedrijf"
   ) +
   theme_bw()
+
+girafe(
+  ggobj = kvvplot,
+  options = list(
+    opts_sizing(rescale = TRUE, width = 1),
+    opts_hover(css = "r: 5pt; stroke: #000; transition: all 0.2s ease-in-out;"),
+    # Optioneel: Maak niet-geactiveerde groepen een beetje transparant
+    opts_hover_inv(css = "opacity: 0.5;")
+  )
+)
+
+
+
 
 ## data voor grafiek gezondheidsalarmen
 fls <- c("friesian.xlsx",
@@ -213,6 +227,7 @@ clactplot <- mmdf |>
   ggplot(aes(
   x = nlactcat,
   y = mn,
+  data_id = nlactcat,
   tooltip = nlactcat)) +
   geom_col_interactive(position='dodge')+
   labs(
@@ -228,6 +243,7 @@ cdilplot <- mmdf |>
   ggplot(aes(
     x = dilcat,
     y = mn,
+    data_id = dilcat,
     tooltip = dilcat)) +
   geom_col_interactive(position='dodge')+
   labs(
@@ -245,7 +261,7 @@ ctplot <- mmdf |>
     x = week,
     y = mn,
     data_id=nlactcat,color = nlactcat,
-    tooltip = week)) +
+    tooltip = nlactcat)) +
   geom_line_interactive(linewidth = 1)+
   labs(
     title = NULL ,
@@ -254,6 +270,16 @@ ctplot <- mmdf |>
   theme_bw() +   theme(legend.position = "none")
 
 combined_plot_c <- (clactplot + cdilplot)/ ctplot
+
+girafe(
+  ggobj = combined_plot_c,
+  options = list(
+    opts_sizing(rescale = TRUE, width = 1),
+    opts_hover(css = "r: 5pt; stroke: #000; transition: all 0.2s ease-in-out;"),
+    # Optioneel: Maak niet-geactiveerde groepen een beetje transparant
+    opts_hover_inv(css = "opacity: 0.5;")
+  )
+)
 
 ## data MPR-en Friesian
 FARM <- "Milchhof Friesian"
@@ -314,8 +340,22 @@ tabcells <- tab3 %>%
   sub_missing(columns = all_of(target_cols), missing_text = "—") |> 
   opt_interactive(
     use_sorting = TRUE,
-    use_search = FALSE
-  )
+    use_pagination = TRUE,         # Enables page switching
+    use_page_size_select = TRUE,    # Allows users to select rows per page
+    page_size_default = 10,         # Starting visible rows
+    page_size_values = c(10, 25, 50, 100) # Choices in dropdown menu
+  ) |> 
+  cols_width(
+    everything() ~ px(60)
+  ) |> 
+  cols_label(lactation = "lact",
+             production = "prod",
+             contrib = "% Tank") |> 
+  cols_hide(columns = c(fat_pct, protein_pct)) |> 
+  tab_options(quarto.disable_processing = TRUE)
+  
+             
+  
 
 
 ## Gewichten
@@ -400,20 +440,6 @@ girafe(
     opts_hover_inv(css = "opacity: 0.5;")
   )
 )
-
-kvvplot <- ggplot(data = kvv,
-                  mapping=aes(x= KV100,
-                              y = FPCM,
-                              color = factor(USER_ID),
-                              tooltip=USER_ID,
-                              data_id=DATE))+
-  geom_point_interactive(size = 3,hover_nearest = T) + 
-  labs(
-    title = "Verband krachtvoerverbruik - Productie",
-    x = "Krachtvoer 100 kg melk", y = "FPCM",
-    color = "Bedrijf"
-  ) +
-  theme_bw()
 
 save(kvvplot,combined_plot,combined_plot_c,tabcells,combined_plot_w,file = '20260609plots.Rdata')
 
