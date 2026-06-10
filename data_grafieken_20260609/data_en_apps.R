@@ -60,6 +60,7 @@ nms <- c("Lugtenberg",
 klanten <- paste('("',
                  paste(nms,collapse = '","'),
                  '")',sep = "")
+
 kids <- gsub("c","",paste(quer_ms("select ID 
                 from tbl_999_users
                 where USER in {klanten}"),collapse = ","))

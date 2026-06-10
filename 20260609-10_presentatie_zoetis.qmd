@@ -1,7 +1,9 @@
 ---
 title: "Datadriven Dairy; perspectief nutritionist"
-author: "Albart Coster"
-date: "6-9-2026"
+author: 
+  - name: "Albart Coster"
+    email: "albart@dairyconsult.nl"
+date: "6-10-2026"
 engine: knitr
 format:
   revealjs:
