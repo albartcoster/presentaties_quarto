@@ -73,6 +73,13 @@ girafe(
 )
 ```
 
+## Mixture of bewital
+
+```{=html}
+<iframe src="beelden/beelden_20260622/BEWI_FATRIX_MC 206_DE.pdf" width="100%" height="600px"></iframe>
+```
+
+
 ## Cleanness of Silos {.nostretch} 
 
 Bruel
