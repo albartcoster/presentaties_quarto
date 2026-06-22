@@ -88,19 +88,14 @@ girafe(
 
 ## Cleanness of Silos {.nostretch} 
 
-Bruel
+Farm B
 
-::: {.fragment}
+
 ![](beelden/beelden_20260622/bruel1.jpg){width="60%"}
-:::
 
-::: {.fragment}
 ![](beelden/beelden_20260622/bruel2.jpg){width="60%"}
-:::
 
-::: {.fragment}
 ![](beelden/beelden_20260622/bruel3.jpg){width="60%"}
-:::
 
 ![](beelden/beelden_20260622/bruel4.jpg){width="60%"}
 
@@ -110,15 +105,20 @@ Before cleaning
 ![](beelden/beelden_20260622/before2.jpg){width="60%"}
 ![](beelden/beelden_20260622/before3.jpg){width="60%"}
 ![](beelden/beelden_20260622/before4.jpg){width="60%"}
-![](beelden/beelden_20260622/before5.jpg){width="60%"}
+![](beelden/beelden_20260622/before5.jpg)
+
+Farm K
+
 ![](beelden/beelden_20260622/before6.jpg){width="60%"}
+
+
 ![](beelden/beelden_20260622/before7.jpg){width="60%"}
 ![](beelden/beelden_20260622/before8.jpg){width="60%"}
 ![](beelden/beelden_20260622/before9.jpg){width="60%"}
 ![](beelden/beelden_20260622/before10.jpg){width="60%"}
 
 
-Bruel after
+Farm B after cleaning
 
 ![](beelden/beelden_20260622/bruelafter1.jpeg){width="60%"}
 ![](beelden/beelden_20260622/bruelafter2.jpeg){width="60%"}
@@ -126,7 +126,7 @@ Bruel after
 ![](beelden/beelden_20260622/bruelafter4.jpeg){width="60%"}
 ![](beelden/beelden_20260622/bruelafter5.jpeg){width="60%"}
 
-Kaarz after
+Farm K after cleaning
 
 ![](beelden/beelden_20260622/kaarzafter1.jpeg){width="60%"}
 ![](beelden/beelden_20260622/kaarzafter2.jpeg){width="60%"}
