@@ -79,6 +79,12 @@ girafe(
 <iframe src="beelden/beelden_20260622/BEWI_FATRIX_MC 206_DE.pdf" width="100%" height="600px"></iframe>
 ```
 
+## Heat Stress, shade
+
+![](beelden/beelden_20260622/lb1.jpeg){width="60%"}
+![](beelden/beelden_20260622/lb2.jpeg){width="60%"}
+![](beelden/beelden_20260622/lb.jpeg){width="60%"}
+
 
 ## Cleanness of Silos {.nostretch} 
 
