@@ -1,4 +1,4 @@
-## data voor presentatie 20260609
+## data voor presentatie 20260630
 packages <- c("RODBC",
               "lubridate",
               "RPostgres",
@@ -6,20 +6,92 @@ packages <- c("RODBC",
               "dotenv",
               "stringr",
               "tools",
-              "dairyconsult",
               "tidyr",
-              "readxl",
+              "read_excel",
               "RMySQL",
               "ggplot2",
               "stringr",
               "patchwork",
               "gt",
+              "readxl",
+              "stringr",
               "ggiraph")
 installed_packages <- packages %in% rownames(installed.packages())
 if (any(installed_packages == FALSE))
   install.packages(packages[!installed_packages])
 invisible(lapply(packages, library, character.only = TRUE))
 load_dot_env()
+
+fls <- list.files(pattern = "^tanken_[a-zA-Z]+\\.xlsx$")
+mnds <- c()
+
+
+for (f in fls){
+  t <- read_excel(f) |> 
+    select(1,4,5:9,13) |> 
+    dplyr::rename(datum = 1,
+                  kg =2,
+                  eiwit = 3,
+                  vet = 4,
+                  lactose = 5,
+                  ureum = 6,
+                  fosfor=7,
+                  celgetal = 8)   |> 
+    mutate(datum = parse_date_time(datum,
+                                    orders = "%d-%b-%Y",
+                                    locale = "nl_NL.UTF-8"),
+           kg = as.numeric(str_remove(kg,"\\.")),
+           eiwit = as.numeric(sub(",",".",eiwit)),
+           vet = as.numeric(sub(",",".",vet)),
+           lactose = as.numeric(sub(",",".",lactose)),
+           fosfor = as.numeric(sub(",",".",fosfor)),
+           celgetal = as.numeric(sub(",",".",celgetal)),
+           ureum = as.numeric(ureum),
+           bedrijf = str_replace_all(f,"tanken_|\\.xlsx",""))
+  if(f==fls[1])
+    ts <- t
+  else
+    ts <- rbind(t,ts)
+      
+}
+
+ts <- ts |> mutate(week = floor_date(datum,"week"),
+                   month = floor_date(datum,"month"))
+
+## grafiek ureum
+
+(uplot <- ts |> 
+    group_by(bedrijf,datum) |> 
+    summarise(ureum = sum(kg*ureum)/sum(kg)) |> 
+      ggplot( mapping=aes(x= datum,
+                              y = ureum,
+                              color = bedrijf,
+                              tooltip=bedrijf,
+                              data_id=bedrijf))+
+    geom_point_interactive(size =0.3) + 
+  geom_smooth_interactive(se = FALSE,span = 0.3,
+                           hover_nearest = T) + 
+  labs(
+    title = "Verloop ureumgehalte",
+    x = "Datum", y = "Ureum (g/100 ml)",
+    color = "Bedrijf"
+  ) +
+  theme_bw())
+
+
+girafe(
+  ggobj = uplot,
+  options = list(
+    opts_sizing(rescale = TRUE, width = 1),
+    opts_hover(css = "r: 5pt; stroke: #000; transition: all 0.2s ease-in-out;"),
+    # Optioneel: Maak niet-geactiveerde groepen een beetje transparant
+    opts_hover_inv(css = "opacity: 0.5;")
+  )
+)
+
+save(uplot,file = '20260630plots.Rdata')
+
+## GRAFIEKEN EIWIT, UREUM ,...
 
 for(VAR in c(
   'PG_HOST',
@@ -47,12 +119,8 @@ if(!exists('msdb')){
   msex <- function(...) dbExecute(msdb, paste0(...))
 }
 
-nms <- c("Lugtenberg",
+nms <- c(
          "Rops",
-         "VOFOskam",
-         "mtsspiker",
-         "famvanleeuwen",
-         'meervee',
          "compagner",
          'bloemert'
          )
@@ -66,8 +134,159 @@ kids <- gsub("c","",paste(quer_ms("select ID
                 where USER in {klanten}"),collapse = ","))
 
 
-mindat <- "2024-12-31"
-maxdat <- "2026-06-01"
+mindat <- "2024-01-01"
+maxdat <- "2026-06-26"
+
+## GRAFIEK re~DATUM
+
+stat <- str_glue('select * 
+                 from view_min_eff
+                 where user_id in {kids}
+                 and DATE between "{mindat}" and "{maxdat}"')
+dmins <- quer_ms(stat)
+stat <- str_glue('select gp.*,u.USER FROM
+                 tbl_021_groupproperties gp
+                 inner join tbl_999_users u on gp.USER_ID = u.ID
+                 where gp.USER_ID in {kids}
+                 and gp.date between "{mindat}" and "{maxdat}"')
+prods <- quer_ms(stat)
+
+df <- dmins |> left_join(prods,by = c("DATE","USER_ID")) |> 
+  mutate(USER = substr(USER,1,1))
+
+(replot <- df |> 
+  mutate(reds = INTAKE_RE/INTAKE_DM,
+         USER = factor(USER),
+         DATE = parse_date_time(DATE,orders = "%Y-%m-%d")) |> 
+    ggplot( mapping=aes(x= DATE,
+                        y = reds,
+                        color = USER,
+                        tooltip=USER,
+                        data_id=USER))+
+    geom_point_interactive(size =0.3) +
+    geom_smooth_interactive(se = FALSE,span = 0.3,
+                            hover_nearest = T) + 
+    labs(
+      title = "Verloop ruweiwitgehalte rantsoenen",
+      x = "Datum", y = "RE (g/kg DS)",
+      color = "Bedrijf"
+    ) +
+    theme_bw())
+
+girafe(
+  ggobj = replot,
+  options = list(
+    opts_sizing(rescale = TRUE, width = 1),
+    opts_hover(css = "r: 5pt; stroke: #000; transition: all 0.2s ease-in-out;"),
+    # Optioneel: Maak niet-geactiveerde groepen een beetje transparant
+    opts_hover_inv(css = "opacity: 0.5;")
+  )
+)
+
+(reurplot <- df |> 
+    mutate(reds = INTAKE_RE/INTAKE_DM,
+           USER = factor(USER),
+           DATE = parse_date_time(DATE,orders = "%Y-%m-%d")) |> 
+    ggplot( mapping=aes(x= reds,
+                        y = UREA_MGL,
+                        color = USER,
+                        tooltip=USER,
+                        data_id=USER))+
+    geom_point_interactive(size =0.3) + 
+    geom_smooth_interactive(method = "lm", se = FALSE,
+                hover_nearest = T) + 
+    labs(
+      title = "Verband Ureum-RE",
+      x = "RE (g/kg DS)", y = "Ureum (mg/100 ml)",
+      color = "Bedrijf"
+    ) +
+    theme_bw())
+
+girafe(
+  ggobj = reurplot,
+  options = list(
+    opts_sizing(rescale = TRUE, width = 1),
+    opts_hover(css = "r: 5pt; stroke: #000; transition: all 0.2s ease-in-out;"),
+    # Optioneel: Maak niet-geactiveerde groepen een beetje transparant
+    opts_hover_inv(css = "opacity: 0.5;")
+  )
+)
+
+
+(oeburplot <- df |> 
+    mutate(oebi = INTAKE_CO2/INTAKE_DM,
+           USER = factor(USER),
+           DATE = parse_date_time(DATE,orders = "%Y-%m-%d")) |> 
+    ggplot( mapping=aes(x= oebi,
+                        y = UREA_MGL,
+                        color = USER,
+                        tooltip=USER,
+                        data_id=USER))+
+    geom_point_interactive(size =0.3) + 
+    geom_smooth_interactive(method = "lm", se = FALSE,
+                hover_nearest = T) + 
+    labs(
+      title = "Verband Ureum-OEB",
+      x = "OEB (g/kg DS)", y = "Ureum (mg/100 ml)",
+      color = "Bedrijf"
+    ) +
+    theme_bw())
+
+
+girafe(
+  ggobj = oeburplot,
+  options = list(
+    opts_sizing(rescale = TRUE, width = 1),
+    opts_hover(css = "r: 5pt; stroke: #000; transition: all 0.2s ease-in-out;"),
+    # Optioneel: Maak niet-geactiveerde groepen een beetje transparant
+    opts_hover_inv(css = "opacity: 0.5;")
+  )
+)
+
+save(uplot,replot,reurplot,oeburplot,file = '20260630plots.Rdata')
+
+mprdata <- quer_pg("select * from view_melkcontrole where dim < 400 and farms_id = 293 and date_time > '2026-01-01'")
+
+koeur <- mprdata |> 
+    filter(production>0,!is.na(ureum),ureum>0,ureum < 40) |> 
+    mutate(nlactcat = factor(ifelse(lactation>3,3,lactation))) |> 
+    ggplot( mapping=aes(x= dim,
+                        y = ureum,
+                        colour = nlactcat,
+                        tooltip=nlactcat,
+                        data_id=nlactcat)
+                        )+
+    geom_point_interactive(size =0.3,hover_nearest = T)+ 
+    geom_smooth_interactive(se = FALSE,hover_nearest = T) + 
+    labs(
+      title = "Verband Ureum-lactatiedagen",
+      x = "Laktatiedagen", y = "Ureum (mg/100 ml)",
+      color = "Laktatie") +
+    theme_bw()
+
+girafe(
+  ggobj = koeur,
+  options = list(
+    opts_sizing(rescale = TRUE, width = 1),
+    opts_hover(css = "r: 1pt; stroke: #000; transition: all 0.2s ease-in-out;"),
+    # Optioneel: Maak niet-geactiveerde groepen een beetje transparant
+    opts_hover_inv(css = "opacity: 0.5;")
+  )
+)
+
+save(uplot,replot,reurplot,oeburplot,koeur,file = '20260630plots.Rdata')
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## eerst grafiek van % percentage krachtvoer en productie
 stat <- str_glue('select USER_ID,
@@ -442,7 +661,7 @@ girafe(
   )
 )
 
-save(kvvplot,combined_plot,combined_plot_c,tabcells,combined_plot_w,file = '20260609plots.Rdata')
+
 
   
 
