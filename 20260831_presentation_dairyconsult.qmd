@@ -152,7 +152,16 @@ Also two other studies on brewers grains:
 - @melo2026 ensiled brewers grains with corn and sorgum grain. 
 - @heinzen2022 ensiled brewers grains with corn grain and inoculant. Grain reduced DM losses, inoculant reduced clostidial growth
 
-## Cublicles
+## Eating time-lying time
+
+See this presentation [Presentation Rick Grant](https://balchem.com/anh/podcasts-webinars/precision-chewing-management-a-dynamic-approach-to-forage-particle-size/)
+
+
+![](beelden/pres_grant_balchem.png){width="80%"}
+
+
+
+## Cubicles
 
 
 ```{=html}
