@@ -1,0 +1,50 @@
+---
+title: "Dairyconsult Meeting "
+author: "Albart Coster"
+date: "3-16-2026"
+engine: knitr
+format:
+  revealjs:
+    scrollable: true
+lang: nl
+output-dir: docs
+bibliography: bib_albart.json
+css: styles.css
+--- 
+
+```{r}
+#| label: start
+#| echo: false
+#| results: 'hide'
+#| warning: false
+packages <- c("echarts4r",
+              "openxlsx",
+              "dplyr",
+              "stringr",
+              "gt")
+installed_packages <- packages %in% rownames(installed.packages())
+if (any(installed_packages == FALSE))
+  install.packages(packages[!installed_packages])
+invisible(lapply(packages, library, character.only = TRUE))
+```
+
+## Content
+
+- SCC trends, see https://www.agproud.com/articles/62686-case-study-the-chronic-cow-driving-up-bulk-tank-scc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## References
+

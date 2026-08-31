@@ -1,0 +1,13 @@
+/* custom.css */
+.gt_table_container {
+  overflow-x: auto;
+  max-width: 100%;
+  resize: horizontal;
+  /* Ensures browser scaling works smoothly without forcing fixed widths */
+  zoom: 100%; 
+}
+
+/* Make sure fonts scale relatively */
+body {
+  font-size: 1rem;
+}

@@ -1,0 +1,85 @@
+---
+title: "Dairyconsult Meeting "
+author: "Albart Coster"
+date: "3-16-2026"
+engine: knitr
+format:
+  revealjs:
+    scrollable: true
+lang: nl
+output-dir: docs
+bibliography: bib_albart.json
+css: styles.css
+--- 
+
+```{r}
+#| label: start
+#| echo: false
+#| results: 'hide'
+#| warning: false
+packages <- c("echarts4r",
+              "openxlsx",
+              "dplyr",
+              "stringr",
+              "gt")
+installed_packages <- packages %in% rownames(installed.packages())
+if (any(installed_packages == FALSE))
+  install.packages(packages[!installed_packages])
+invisible(lapply(packages, library, character.only = TRUE))
+```
+
+## Content
+
+- Ammonia and lung lesions in calves
+- Reducing Ammonia emissions
+- Feeding choline, methionine, niacine and glycerine to prepartum cows
+- Nitrate for N-efficiency
+
+## Ammonia and lung lesions in calfs
+
+See [podcast about ammonia in calf barns](https://www.thebullvine.com/news/dr-brays-5-sodium-bisulfate-gamble-zero-lung-lesions-and-the-real-cost-of-calf-barn-ammonia/)
+
+- $[\texttt{NH}_3]$  in the air should be < 5 ppm
+- When higher; lung lesions
+- Testing with strips, see [ammonia strips](https://www.kalfshop.nl/shop/huisvesting/klimaatbeheersing/ammoniak-testpapier-voor-stallucht/)
+- When >5 ppm, add Sodium bisulphate
+- See also [bedding material poultry ](https://grillo.de/en/products/chemical-products/animal-care/improbed/)
+
+## Other applications for NaHSO4
+
+- Acidification of footbaths with CuSO4 and formalin, see [Ohio State University](https://dairy.osu.edu/newsletter/buckeye-dairy-news/volume-26-issue-5/footbath-practices-lameness-prevention)
+- Hygienization of bedding material, see @sun2008
+
+## Continuing on foothbaths
+
+- Application on consecutive days
+- On *non footbath day*, use 1% soap (this is also the practice in the Matrasses of Schippers)
+- See [Zinpro, why is your footbath not working](https://www.zinpro.com/resource-center/blog/why-isnt-your-dairy-cattle-footbath-working/)
+
+## Feeding choline +  methionine
+
+- We have mixed experience with choline and methionine
+- Recently, I lost a client. He started to feed a mixture of choline, methionine and niacine to this dry cows. Experiences quite good
+- See also @zhou2016a for comparison between choline and methionine
+
+So, I will make a similar mix
+
+## Article about nitrate and efficiency
+
+See @peng2026
+
+- Nitrate improves production and N-efficiency
+- Reduces CH4
+
+## Last 
+
+Client interested in reducing NH3 emission
+
+- Reduce CP from diets
+- Clean barn (water)
+- Reduce ventilation of manure
+- Maybe NaHSO4 into bedding
+- Maybe acidification of manure. With what?
+
+## References
+
